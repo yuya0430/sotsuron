@@ -1,0 +1,143 @@
+\documentclass[12pt,frame,epsbox]{other/jmyreport}
+
+\usepackage{amsmath}
+\usepackage{ltablex}
+\usepackage{tabularx}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+    \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+\usepackage{longtable}
+\usepackage{type1cm}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{other/a4j}
+\usepackage{other/fancybox}
+\usepackage{fancyheadings}
+\usepackage{other/frame}
+%\usepackage{fancyhdr}
+\usepackage{other/epsbox}
+% 必要な時
+%\usepackage{here}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\begin{document}
+\input{other/mymacros}
+%-------------------------------------------------------------
+\input{cover/cover}                            % 表紙
+%-------------------------------------------------------------
+\normalsize
+\pagenumbering{roman}
+\pagestyle{myheadings}
+\setcounter{page}{0}
+\tableofcontents                         % 目次
+\setlength{\baselineskip}{14.5pt}
+\markboth{}{目次}
+\listoffigures                           % 図目次
+\markboth{}{図目次}
+\markboth{}{表目次}
+\listoftables                            % 表目次
+
+%-------------------------------------------------------------
+\setlength{\baselineskip}{20pt}
+\chapter{まえがき}                      % 本文
+\pagenumbering{arabic}
+\markright{まえがき}
+\input{chapter1/intro4}
+%-------------------------------------------------------------
+\chapter{対話システムにおける対話状態追跡}
+%対話状態追跡はなんなのか
+本章ではタスク指向型対話システムと対話状態追跡の説明をした後，これまでの対話システムがどのような手法によって対話状態追跡を行ってきたか，また何が問題であったかを順に説明する．そして，本研究が取り扱ったコンペティション DSTC8-Track4 について説明する.
+\markright{対話システムにおける対話状態追跡}
+\section{タスク指向型対話システム}
+\input{chapter2/taiwa_system}
+\section{対話状態追跡}
+\input{chapter2/dst}
+
+\section{ルールベースの対話状態追跡}
+\input{chapter2/rule_base}
+\section{統計的機械学習による対話状態追跡}
+\input{chapter2/machine_learning3}
+\section{深層学習による対話状態追跡}
+\input{chapter2/deep_learning}
+\section{Dialogue System Technology Challenge 8}
+%こういうコンペがあります
+\input{chapter2/dstc8_2nd}
+%-------------------------------------------------------------
+\chapter{BERTに基づく対話状態追跡}
+\markright{BERTに基づく対話状態追跡}
+本研究で提案する手法を試すために，DSTC8 Track4 で公開されたベースラインモデル\cite{baseline}を用いた．本章では，ベースラインモデルとして用いた BERT に基づく対話状態追跡について述べる．
+\section{BERT とは}
+\input{chapter3/bert}
+\section{BERTに基づく対話状態追跡}
+\input{chapter3/bert_dst}
+\subsection{スキーマ埋め込みモジュール}
+\input{chapter3/schema_embedding}
+\subsection{状態更新モジュール}
+\input{chapter3/state_update2}
+%-------------------------------------------------------------
+\chapter{対話行為タグを用いた重要対話履歴抽出}
+\markright{対話行為タグを用いた重要対話履歴抽出}
+本章では，SGD データセットに含まれる対話行為タグの種類を説明したのち，本研究で提案する対話行為タグを用いた重要対話履歴について説明する．
+\section{対話行為}
+\input{chapter4/dialogue_action}
+\section{対話行為タグを用いた重要対話履歴抽出}
+\input{chapter4/teian}
+%-------------------------------------------------------------
+\chapter{対話状態追跡における各対話行為の重要性調査}
+\markright{対話状態追跡における各対話行為の重要性調査}
+予備実験として，どの対話行為が対話状態追跡にとって重要なのかを調査する．本実験では，対話状態追跡においてスロット値を変更する候補を持つ発話が重要であると仮定する．ゆえに，対話行為ごとにスロット値候補の出現回数と出現したスロット値候補が実際にスロット値に反映された回数を調べて比較する．本章では，この2つの数値の調査方法の説明と調査結果を示す．
+\section{データセット}
+\input{chapter5/dataset}
+\section{実験手法}
+\input{chapter5/yobi_syuhou}
+\section{調査結果}
+\input{chapter5/pre-experiment}
+%-------------------------------------------------------------
+\chapter{評価実験}
+本章では，実験条件を述べた上で提案手法を用いたモデルの性能について自動評価した結果を示す．その際，各対話行為タグで抽出した場合の性能比較，従来の対話履歴の使用法との性能比較を行う．自動評価の指標はDSTC8-Track4に従っている．
+\markright{評価実験}
+\section{実験条件}
+\input{chapter6/jouken}
+\section{評価指標}
+\input{chapter6/sihyou}
+\section{実験結果}
+\input{chapter6/result}
+
+%-------------------------------------------------------------
+\chapter{むすび}                          % むすび
+\markright{むすび}
+\input{chapter7/conclusion}
+
+
+%-------------------------------------------------------------
+\chapter*{謝辞}                           % 謝辞
+\markright{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
+\input{chapter7/syaji}
+
+
+\newpage
+%-------------------------------------------------------------
+% 参考文献
+
+\bibliography{biblio/bibtex}
+\bibliographystyle{unsrt}
+
+
+%-------------------------------------------------------------
+% 付録
+% 画像を沢山張り付ける場合など，
+
+\chapter*{付録}
+\markright{付録}
+\addcontentsline{toc}{chapter}{付録}
+\def\thechapter{A}
+\section{各サービスのスキーマ}
+\input{other/schema2}
+
+\end{document}

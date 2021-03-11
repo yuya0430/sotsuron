@@ -1,0 +1,73 @@
+\begin{table}[thb]
+    \centering
+    \caption{SGD データセットの学習用，検証用が扱う各ドメインのサービスとインテントの数}
+    \label{tab:domain}
+    \begin{tabular}{|l|c|c||l|c|c|} \hline
+        ドメイン & サービス数 & インテント数 & ドメイン & サービス数 & インテント数 \\ \hline
+        Alarm & 1 & 2  & Movie & 2 & 4  \\
+        Bank & 2 & 4 & Music & 2 & 4 \\
+        Bus & 2 & 4 & RentalCar & 2 & 4 \\
+        Calendar & 1 & 3 & Restaurant & 2 & 4 \\
+        Event & 2 & 5 & RideShare & 2 & 2 \\
+        Flight & 3 & 8 & Service & 4 & 8 \\
+        Home & 1 & 2 & Travel & 1 & 1 \\
+        Hotel & 4 & 8 & Weather & 1 & 1 \\
+        Media & 2 & 4 & & & \\
+         \hline
+    \end{tabular}
+\end{table}
+\begin{table}[thb]
+    \centering
+    \caption{SGD データセットの学習用，検証用が扱うサービスのリスト（括弧内のサービスはSingle-domain では扱わない）}
+    \label{tab:domain}
+    \begin{tabularx}{150mm}{|l|L|} \hline
+        & 扱うサービスのリスト \\ \hline
+        学習用 & [ Banks\_1, Buses\_1, Buses\_2, Calendar\_1, Events\_1, Events\_2, Flights\_1, Flights\_2, Homes\_1, Hotels\_1, Hotels\_2, Hotels\_3, Media\_1, Movies\_1, Music\_1, Music\_2, RentalCars\_1, RentalCars\_2, Restaurants\_1, RideSharing\_1, RideSharing\_2, Services\_1, Services\_2, Services\_3, (Travel\_1), (Weather\_1) ] \\ \hline
+        検証用 & [ Alarm\_1, Banks\_2, Buses\_1, Events\_1, Flights\_3, Homes\_1, Hotels\_1, Hotels\_4, Media\_2, Movies\_2, Music\_1, RentalCars\_1, Restaurants\_2, RideSharing\_1, Services\_4, Travel\_1, Weather\_1 ] \\ \hline
+    \end{tabularx}
+\end{table}
+\begin{table}[thb]
+    \centering
+    \caption{SGD データセットの学習用，検証用のドメインごとの対話数}
+    \label{tab:taiwasu}
+    \begin{tabular}{|l|c|c|c|c|c|c|} \hline
+        & \multicolumn{3}{c|}{学習用の対話数} & \multicolumn{3}{|c|}{検証用の対話数}  \\ \cline{2-7}
+        & \begin{tabular}{c}
+            Single \\ domain
+        \end{tabular} &
+        \begin{tabular}{c}
+            Multi \\ domain
+        \end{tabular} & All 
+        & \begin{tabular}{c}
+            Single \\ domain
+        \end{tabular} &
+        \begin{tabular}{c}
+            Multi \\ domain
+        \end{tabular} & All \\ \hline
+        Alarm & NA & NA & NA & 37 & NA & 37  \\ \hline
+        Banks & 207 & 520 & 727  & 42 & 252 & 294  \\ \hline
+        Buses & 310 & 1,970 & 2,280  & 44 & 285 & 329  \\ \hline
+        Calendar & 169 & 1,433 & 1,602  & NA & NA & NA \\ \hline
+        Events & 788 & 2,721 & 3,509  & 73 & 345 & 418  \\ \hline
+        Flights & 985 & 1,762 & 2,747  & 94 & 297 & 391  \\ \hline
+        Homes & 268 & 579 & 847  & 81 & 99 & 180  \\ \hline
+        Hotels & 457 & 2,896 & 3,353  & 56 & 521 & 577  \\ \hline
+        Media & 281 & 832 & 1,113  & 46 & 133 & 179  \\ \hline
+        Movies & 292 & 1,325 & 1,617  & 47 & 94 & 141  \\ \hline
+        Music & 394 & 896 & 1,290  & 35 & 161 & 196  \\ \hline
+        RentalCars & 215 & 1,370 & 1,585  & 39 & 342 & 381  \\ \hline
+        Restaurants & 367 & 2052 & 2,419  & 73 & 263 & 336  \\ \hline
+        RideSharing & 119 & 1,584 & 1,703  & 45 & 225 & 270  \\ \hline
+        Services & 551 & 1,338 & 1,889  & 44 & 157 & 201  \\ \hline
+        Travel & NA & 1,871 & 1,871  & 45 & 238 & 283  \\ \hline
+        Weather & NA & 951 & 951  & 35 & 322 & 357  \\ \hline
+        (Total) & 5,403 & 10,739 & 16,142 & 836 & 1,646 & 2,482 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+データセットはDSTC8-Track4 で公開された SGD データセット\cite{sgd}を用いる．対話データは対話シミュレータによる対話を収集したものであり，各種ラベルもシミュレータによって付与されたものである．SGD データセットは，対話中で1つのドメインしか扱わない Single-domain の対話と複数ドメイン扱う Multi-domain の対話という2種類を持つ．現在は学習用と検証用のデータしか公開されていないため，本研究ではテスト用に検証用のデータセットを用いている．
+\par
+SGDデータセットは17個のドメインを扱う．各ドメインのサービス数とインテント数は表\ref{tab:domain}に示す．また，SGDデータセットでは訓練時，検証時，テスト時で扱うサービスが異なる．訓練時と検証時で扱うサービスは表\ref{tab:service}に示す．また，訓練用，検証用データセットのドメインごとの対話数を表\ref{tab:taiwasu} に示す．
+
+対話シミュレータはユーザとシステムの役割を果たす2つのエージェントで構成されている．両エージェントは，事前に作成された有限の対話行為セットを使用して対話行為と対話状態で構成される対話のあらすじを作成する．対話行為には対話行為によって与えるスロットと値のペアが含まれる．スロット値に関しては，サービスごとに事前に定義されているスロットと値のペアから取得している．対話行為の選択は，様々な対話の流れを捉えるように設計された確率的オートマトンに従う．また，ユーザエージェントには，最大5つのインテントを含む200以上のシナリオが与えられており，インテントが達成されるたびにシナリオを見て次のインテントに移行する．このように作成された対話のあらすじは，各対話行為を発話に変換するためのテンプレートによって，対話文に変換される．

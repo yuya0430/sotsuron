@@ -1,0 +1,63 @@
+データセットはDSTC8-Track4 で公開された SGD データセット\cite{sgd}を用いる．対話データはユーザ役の対話シミュレータとシステム役の対話シミュレータによる対話を収集したものであり，各種ラベルもシミュレータによって付与されたものである．現在は学習用と検証用データのみ公開されている．SGD データセットは，対話中で1つのドメインしか扱わない Single-domain の対話と複数ドメインを扱う Multi-domain の対話という2種類を持つ．対話の長さは，Single-domainで平均$15.15$ターン，Multi-Domainで平均$22.94$ターンである．SGDデータセットは17個のドメインを扱う．そして，ドメインごとにサービスがいくつか存在し，スキーマが用意されている．ドメインごとのサービスの個数と，学習用，検証用データセットの対話数を表\ref{tab:taiwasu} に示す．また，SGDデータセットでは学習時，検証時，テスト時で扱うサービスが異なる．学習時と検証時で扱うサービスは表\ref{tab:service}に示す．スキーマに関しては付録の表\ref{tab:schema}に載せている．
+
+\begin{table}[p]
+    \begin{center}
+    \begin{minipage}{1.0\hsize}
+    \centering
+    \caption{SGD データセットのドメインごとの対話数（括弧内はサービスの個数）}
+    \label{tab:taiwasu}
+    \vspace{3mm}
+    \begin{tabular}{|l|c|c|c|c|c|c|} \hline
+        & \multicolumn{3}{c|}{学習用の対話数} & \multicolumn{3}{|c|}{検証用の対話数}  \\ \cline{2-7}
+        & \begin{tabular}{c}
+            Single \\ domain
+        \end{tabular} &
+        \begin{tabular}{c}
+            Multi \\ domain
+        \end{tabular} & All 
+        & \begin{tabular}{c}
+            Single \\ domain
+        \end{tabular} &
+        \begin{tabular}{c}
+            Multi \\ domain
+        \end{tabular} & All \\ \hline
+        Alarm (1) & NA & NA & NA & 37 & NA & 37  \\ \hline
+        Banks (2) & 207 & 520 & 727  & 42 & 252 & 294  \\ \hline
+        Buses (2) & 310 & 1,970 & 2,280  & 44 & 285 & 329  \\ \hline
+        Calendar (1) & 169 & 1,433 & 1,602  & NA & NA & NA \\ \hline
+        Events (2) & 788 & 2,721 & 3,509  & 73 & 345 & 418  \\ \hline
+        Flights (3) & 985 & 1,762 & 2,747  & 94 & 297 & 391  \\ \hline
+        Homes (1) & 268 & 579 & 847  & 81 & 99 & 180  \\ \hline
+        Hotels (4) & 457 & 2,896 & 3,353  & 56 & 521 & 577  \\ \hline
+        Media (2) & 281 & 832 & 1,113  & 46 & 133 & 179  \\ \hline
+        Movies (2) & 292 & 1,325 & 1,617  & 47 & 94 & 141  \\ \hline
+        Music (2) & 394 & 896 & 1,290  & 35 & 161 & 196  \\ \hline
+        RentalCars (2) & 215 & 1,370 & 1,585  & 39 & 342 & 381  \\ \hline
+        Restaurants (2) & 367 & 2052 & 2,419  & 73 & 263 & 336  \\ \hline
+        RideSharing (2) & 119 & 1,584 & 1,703  & 45 & 225 & 270  \\ \hline
+        Services (2) & 551 & 1,338 & 1,889  & 44 & 157 & 201  \\ \hline
+        Travel (4) & NA & 1,871 & 1,871  & 45 & 238 & 283  \\ \hline
+        Weather (1) & NA & 951 & 951  & 35 & 322 & 357  \\ \hline
+        \textbf{TOTAL} & 5,403 & 10,739 & 16,142 & 836 & 1,646 & 2,482 \\ \hline
+    \end{tabular}
+    \end{minipage} \\
+
+    \begin{minipage}{1.0\hsize}
+    \centering
+    \caption{SGD データセットの学習用，検証用が扱うサービスのリスト}
+    \label{tab:service}
+    \vspace{3mm}
+    \begin{tabular}{|l|l|} \hline
+        & \multicolumn{1}{c|}{扱うサービスのリスト} \\ \hline
+        学習用 & 
+        \begin{tabular}{l}
+            [ Banks\_1, Buses\_1, Buses\_2, Calendar\_1, Events\_1, Events\_2, \\Flights\_1, Flights\_2, Homes\_1, Hotels\_1, Hotels\_2, Hotels\_3, Media\_1, \\Movies\_1, Music\_1, Music\_2, RentalCars\_1, RentalCars\_2, \\Restaurants\_1, RideSharing\_1, RideSharing\_2, Services\_1, Services\_2, \\Services\_3, Travel\_1, Weather\_1 ]
+        \end{tabular} \\ \hline
+        検証用 & 
+        \begin{tabular}{l}
+            [ Alarm\_1, Banks\_2, Buses\_1, Events\_1, Flights\_3, Homes\_1, Hotels\_1, \\Hotels\_4, Media\_2, Movies\_2, Music\_1, RentalCars\_1, Restaurants\_2, \\RideSharing\_1, Services\_4, Travel\_1, Weather\_1 ] 
+        \end{tabular}\\ \hline
+    \end{tabular}
+    \end{minipage}
+    \end{center}
+\end{table}

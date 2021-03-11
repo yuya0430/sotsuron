@@ -1,0 +1,56 @@
+\documentclass[a4j,twoside]{jarticle}
+\usepackage[dvips]{graphicx}
+\usepackage{shuronabst_sosei}
+\usepackage{cite}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{ascmac,bm,color,multirow}
+
+\input{mymacros}
+%マージンはプリンタによって変更
+%\addtolength{\oddsidemargin}{0mm}
+%\addtolength{\evensidemargin}{0mm}
+
+%baselinestretchを変更すると上部枠の大きさが変わるのでおすすめしない
+\renewcommand{\baselinestretch}{1}
+
+\修了年度{○○}        % 半角で
+\分野{計算システム工学分野} %分野も入れてね！
+\学籍番号{○○○○○○○○} %全角で！（半角だと環境によってはダメかも）
+\氏名{姓 名}
+\題目{○○○○○○}
+\指導教員{李 晃伸}
+
+\begin{document}              %この行を消してはいけない
+%\twocolumn[\vspace*{32mm}]     %この行を消してはいけない
+\twocolumn[\vspace*{23mm}]     %この行を消してはいけない
+\begin{論文概要}              %この行を消してはいけない
+\setcounter{page}{1}          %表(左綴じ)は1、裏(右綴じ)は2を指定
+
+%%%%%%% ここからアブスト本体 %%%%%%%
+
+\setlength{\baselineskip}{4.5mm}
+\section{はじめに}
+
+\section{hoge}
+
+\section{hogehoge}
+
+\section{評価実験}
+
+\section{むすび}
+
+%\vspace{-1.5mm}
+%\vspace{-1.5mm}
+%%%%%%
+ \begin{small}
+ \begin{thebibliography}{9}
+\bibitem{julius}
+A.\,Lee, {\itshape et al.}, ``Recent Development of Open-Source Speech Recognition Engine Julius,'' in Proc.\,of APSIPA, pp.\,131-137, 2009.
+\end{thebibliography}
+ \end{small}
+%%%%%% 以下の行は消さないこと %%%%%%%
+\clearpage                       %この行を消すと最終ページの枠線消滅の危機
+\end{論文概要}                   %この行を消してはいけない
+\end{document}                   %この行を消してはいけない

@@ -1,0 +1,21 @@
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces タスク指向型対話システムの基本構成}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 対話管理部の処理の流れ}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces if-then ルールによる対話状態追跡の例}}{5}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 対話状態の確率的表現である信念$b$ のイメージ図}}{6}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 部分観測マルコフ決定過程（POMDP）の流れ}}{7}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 言語理解と対話状態追跡を共同で学習するモデル\cite {joint}}}{8}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces スキーマの構成}}{10}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces DSTC8-Track4 のイメージ図\cite {dstc8}}}{10}{figure.2.8}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Fine-Tuningの例\cite {bert}}}{13}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces ベースラインモデルの構成}}{14}{figure.3.2}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 重要対話履歴抽出モジュールを加えた提案モデル}}{18}{figure.4.1}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 1対話あたりの各対話行為の発話中でスロット値候補が出現した回数}}{24}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 1対話あたりの各対話行為の発話中で出現したスロット値候補が実際にスロット値に反映された回数}}{24}{figure.5.2}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces ベースラインとOFFERを用いた提案手法の出力結果}}{28}{figure.6.1}
+\addvspace {10pt}

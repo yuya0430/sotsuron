@@ -1,0 +1,127 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newfont{\mibvii}{cmmib7}
+\def\sbmath#1{\mbox{\mibvii #1}}
+\def\sbO{\sbmath{O}}
+\def\sbo{\sbmath{o}}
+\def\sbq{\sbmath{q}}
+\def\sbl{\sbmath{l}}
+%\def\sbO{\bmath{O}}
+%\def\sbo{\bmath{o}}
+%\def\sbq{\bmath{q}}
+%\def\sbl{\bmath{l}}
+
+\def\lm{m} % 混合における loop 変数
+\def\nm{k} % 混合の数
+
+\def\ls{g} % 標本空間の loop 変数
+\def\ns{G} % 標本空間の数
+
+\def\sps{\bl} %空間の系列 space sequence
+\def\sts{\bq} %状態の系列 state sequence
+\def\ssps{\sbl} %空間の系列 space sequence
+\def\ssts{\sbq} %状態の系列 state sequence
+
+\def\spsc{l} %空間の系列の要素 space sequence component
+\def\stsc{q} %状態の系列の要素 state sequence component
+
+% 太文字フォント
+\def\bmath#1{\mbox{\boldmath{$#1$}}}
+\def\bA{\bmath{A}}
+\def\bB{\bmath{B}}
+\def\bC{\bmath{C}}
+\def\bD{\bmath{D}}
+\def\bE{\bmath{E}}
+\def\bF{\bmath{F}}
+\def\bG{\bmath{G}}
+\def\bH{\bmath{H}}
+\def\bI{\bmath{I}}
+\def\bJ{\bmath{J}}
+\def\bK{\bmath{K}}
+\def\bL{\bmath{L}}
+\def\bM{\bmath{M}}
+\def\bN{\bmath{N}}
+\def\bO{\bmath{O}}
+\def\bP{\bmath{P}}
+\def\bQ{\bmath{Q}}
+\def\bR{\bmath{R}}
+\def\bS{\bmath{S}}
+\def\bT{\bmath{T}}
+\def\bU{\bmath{U}}
+\def\bV{\bmath{V}}
+\def\bW{\bmath{W}}
+\def\bX{\bmath{X}}
+\def\bY{\bmath{Y}}
+\def\bZ{\bmath{Z}}
+
+\def\ba{\bmath{a}}
+\def\bb{\bmath{b}}
+\def\bc{\bmath{c}}
+\def\bd{\bmath{d}}
+\def\be{\bmath{e}}
+%\def\bf{\bmath{f}}
+\def\bg{\bmath{g}}
+\def\bh{\bmath{h}}
+\def\bi{\bmath{i}}
+\def\bj{\bmath{j}}
+\def\bk{\bmath{k}}
+\def\bl{\bmath{l}}
+%\def\bm{\bmath{m}}
+\def\bn{\bmath{n}}
+\def\bo{\bmath{o}}
+\def\bp{\bmath{p}}
+\def\bq{\bmath{q}}
+\def\br{\bmath{r}}
+\def\bs{\bmath{s}}
+\def\bt{\bmath{t}}
+\def\bu{\bmath{u}}
+\def\bv{\bmath{v}}
+\def\bw{\bmath{w}}
+\def\bx{\bmath{x}}
+\def\by{\bmath{y}}
+\def\bz{\bmath{z}}
+
+\def\bmu{\bmath{\mu}}
+\def\btau{\bmath{\tau}}
+\def\bSigma{\bmath{\Sigma}}
+\def\bxi{\bmath{\xi}}
+\def\bpi{\bmath{\pi}}
+\def\btheta{\bmath{\theta}}
+\def\bTheta{\bmath{\Theta}}
+% 大文字
+\def\calC{{\cal C}}
+\def\calD{{\cal D}}
+\def\calL{{\cal L}}
+\def\calN{{\cal N}}
+\def\calQ{{\cal Q}}
+\def\calS{{\cal S}}
+
+\def\Qfunc{\calQ (\lambda,\overline{\lambda})}
+\def\prodt{\displaystyle\mathop{\prod^{T}_{t=1}}}
+
+\def\valueof#1{V(#1)}
+\def\spaceof#1{S(#1)}
+\def\timeof#1{T({\mbox{\boldmath{$O$}}},#1)}
+
+%
+% Σのマクロ
+
+\def\sumt{\displaystyle\sum_{t=1}^{T}} % t=1〜T までの和
+\def\sumspace{\sum_{\ls=1}^{\ns}} % 全ての空間に関する和
+\def\sumtinspace#1{\displaystyle\sum_{t \in T({\sbO},#1)}}
+%\def\sumtinspace#1{\displaystyle\sum_{\textstyle t \in \timeof{#1}}}
+% o_t が空間 \ls を含む様な t に関する和
+
+\def\sumonecluster#1{\displaystyle\sum_{c \in \calC(#1)}} % t=1〜T までの和
+
+\newcommand{\bm}[1]{\mbox{\boldmath$#1$}}
+\def\argmax{\mathop{\rm argmax}}
+
+\def\tr{\mathop{\rm tr}}
+\def\sp{~~~~~}
+
+\newcommand\splittheta[1]{\theta #1^{(1)} + (1-\theta)#1^{(2)}}
+\newcommand\diffedsplittheta[1]{\frac{-(#1^{(1)}-#1^{(2)})^2} {(\theta #1^{(1)}+(1-\theta)#1^{(2)})^2}}

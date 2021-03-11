@@ -1,0 +1,7 @@
+\bibitem{siri} “Siri” \url{http://www.apple.com/ios/siri/}
+
+  \bibitem{gooassi} “Google Assistant” \url{https://assistant.google.com/}
+
+  \bibitem{rinna} “女子高生 AI りんな” \url{https://www.rinna.jp/}
+
+  \bibitem{concier} “しゃべってコンシェル” \url{https://www.nttdocomo.co.jp/service/shabette_concier/}

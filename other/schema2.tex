@@ -1,0 +1,59 @@
+\setlongtables
+\begin{tabularx}{\linewidth}{|l|L|L|}
+    \caption{各スキーマのスロットとインテント}
+    \label{tab:schema}
+    \\
+    %------ 最初のページの表の最上部 ----
+    \hline
+    サービス & スロット & インテント \\ \hline
+    \endfirsthead
+    %------ 2ページ以降の表の最上部 ----
+    \multicolumn{3}{l}{前ページからの続き} \\ \hline
+    サービス & スロット & インテント \\ \hline
+    \endhead
+    %----- ページの表の最下部 --------
+    \hline
+    \multicolumn{3}{r}{表は次ページに続く}\\
+    \endfoot
+    %----- 最終ページの表の最下部 --------
+    \hline
+    \multicolumn{3}{r}{これで終了}\\
+    \endlastfoot
+    %----------------------------------------------------------------
+    Alarm\_1 & [ 'alarm\_time', 'alarm\_name', 'new\_alarm\_time', 'new\_alarm\_name' ] & [ 'GetAlarms', 'AddAlarm' ] \\ \hline
+    Banks\_1 & 
+    [ 'account\_type', 'recipient\_account\_type', 'balance', 'amount', 'recipient\_account\_name' ] &
+    [ 'CheckBalance', 'TransferMoney' ] \\ \hline 
+    Banks\_2 & [ 'account\_type', 'recipient\_account\_type', 'account\_balance', 'transfer\_amount', 'recipient\_name', 'transfer\_time' ] & [ 'CheckBalance', 'TransferMoney' ] \\ \hline
+    Buses\_1 & [ 'from\_location', 'to\_location', 'from\_station', 'to\_station', 'leaving\_date', 'leaving\_time', 'fare', 'travelers', 'transfers' ] & [ 'FindBus', 'BuyBusTicket' ] \\ \hline
+    Buses\_2 & [ 'origin', 'destination', 'origin\_station\_name', 'destination\_station\_name', 'departure\_date', 'price', 'departure\_time', 'group\_size', 'fare\_type' ] & [ 'FindBus', 'BuyBusTicket' ] \\ \hline
+    Calendar\_1 & [ 'event\_date', 'event\_time', 'event\_location', 'event\_name', 'available\_start\_time', 'available\_end\_time' ] & [ 'GetEvents', 'GetAvailableTime', 'AddEvent' ] \\ \hline
+    Events\_1 & [ 'category', 'subcategory', 'event\_name', 'date', 'time', 'number\_of\_seats', 'city\_of\_event', 'event\_location', 'address\_of\_location' ] & [ 'FindEvents', 'BuyEventTickets' ] \\ \hline
+    Events\_2 & [ 'event\_type', 'category', 'event\_name', 'date', 'time', 'number\_of\_tickets', 'city', 'venue', 'venue\_address' ] & [ 'FindEvents', 'GetEventDates', 'BuyEventTickets' ] \\ \hline
+    Flights\_1 & [ 'passengers', 'seating\_class', 'origin\_city', 'destination\_city', 'origin\_airport', 'destination\_airport', 'departure\_date', 'return\_date', 'number\_stops', 'outbound\_departure\_time', 'outbound\_arrival\_time', 'inbound\_arrival\_time', 'inbound\_departure\_time', 'price', 'refundable', 'airlines' ] & [ 'SearchOnewayFlight', 'SearchRoundtripFlights', 'ReserveOnewayFlight', 'ReserveRoundtripFlights' ] \\ \hline
+    Flights\_2 & [ 'passengers', 'seating\_class', 'origin', 'destination', 'origin\_airport', 'destination\_airport', 'departure\_date', 'return\_date', 'number\_stops', 'outbound\_departure\_time', 'outbound\_arrival\_time', 'inbound\_arrival\_time', 'inbound\_departure\_time', 'fare', 'is\_redeye', 'airlines' ] & [ 'SearchOnewayFlight', 'SearchRoundtripFlights' ] \\ \hline
+    Flights\_3 & [ 'passengers', 'flight\_class', 'origin\_city', 'destination\_city', 'origin\_airport\_name', 'destination\_airport\_name', 'departure\_date', 'return\_date', 'number\_stops', 'outbound\_departure\_time', 'outbound\_arrival\_time', 'inbound\_arrival\_time', 'inbound\_departure\_time', 'price', 'number\_checked\_bags', 'airlines', 'arrives\_next\_day' ] & [ 'SearchOnewayFlight', 'SearchRoundtripFlights' ] \\ \hline
+    Homes\_1 & [ 'area', 'address', 'property\_name', 'phone\_number', 'furnished', 'pets\_allowed', 'rent', 'visit\_date', 'number\_of\_beds', 'number\_of\_baths' ] & [ 'FindApartment', 'ScheduleVisit' ] \\ \hline
+    Hotels\_1 & [ 'destination', 'number\_of\_rooms', 'check\_in\_date', 'number\_of\_days', 'star\_rating', 'hotel\_name', 'street\_address', 'phone\_number', 'price\_per\_night', 'has\_wifi' ] & [ 'ReserveHotel', 'SearchHotel' ] \\ \hline
+    Hotels\_2 & [ 'where\_to', 'number\_of\_adults', 'check\_in\_date', 'check\_out\_date', 'rating', 'address', 'phone\_number', 'total\_price', 'has\_laundry\_service' ] & [ 'BookHouse', 'SearchHouse' ] \\ \hline
+    Hotels\_3 & [ 'location', 'number\_of\_rooms', 'check\_in\_date', 'check\_out\_date', 'average\_rating', 'hotel\_name', 'street\_address', 'phone\_number', 'price', 'pets\_welcome' ] & [ 'ReserveHotel', 'SearchHotel' ] \\ \hline
+    Hotels\_4 & [ 'location', 'number\_of\_rooms', 'check\_in\_date', 'stay\_length', 'star\_rating', 'place\_name', 'street\_address', 'phone\_number', 'price\_per\_night', 'smoking\_allowed' ] & [ 'ReserveHotel', 'SearchHotel' ] \\ \hline
+    Media\_1 & [ 'title', 'genre', 'subtitles', 'directed\_by' ] & [ 'FindMovies', 'PlayMovie' ] \\ \hline
+    Media\_2 & [ 'movie\_name', 'genre', 'subtitle\_language', 'director', 'actors', 'price' ] & [ 'FindMovies', 'RentMovie' ] \\ \hline
+    Movies\_1 & [ 'price', 'number\_of\_tickets', 'show\_type', 'theater\_name', 'show\_time', 'show\_date', 'genre', 'street\_address', 'location', 'movie\_name' ] & [ 'BuyMovieTickets', 'FindMovies', 'GetTimesForMovie' ] \\ \hline
+    Movies\_2 & [ 'title', 'genre', 'aggregate\_rating', 'starring', 'director' ] & [ 'FindMovies' ] \\ \hline
+    Music\_1 & [ 'song\_name', 'artist', 'album', 'genre', 'year', 'playback\_device' ] & [ 'LookupSong', 'PlaySong' ] \\ \hline
+    Music\_2 & [ 'song\_name', 'artist', 'album', 'genre', 'playback\_device' ] & [ 'LookupMusic', 'PlayMedia' ] \\ \hline
+    RentalCars\_1 & [ 'type', 'car\_name', 'pickup\_location', 'pickup\_date', 'pickup\_time', 'pickup\_city', 'dropoff\_date', 'total\_price' ] & [ 'GetCarsAvailable', 'ReserveCar' ] \\ \hline
+    RentalCars\_2 & [ 'car\_type', 'car\_name', 'pickup\_location', 'pickup\_date', 'pickup\_time', 'pickup\_city', 'dropoff\_date', 'total\_price' ] & [ 'GetCarsAvailable', 'ReserveCar' ] \\ \hline
+    Restaurants\_1 & [ 'restaurant\_name', 'date', 'time', 'serves\_alcohol', 'has\_live\_music', 'phone\_number', 'street\_address', 'party\_size', 'price\_range', 'city', 'cuisine' ] & [ 'ReserveRestaurant', 'FindRestaurants' ] \\ \hline
+    Restaurants\_2 & [ 'restaurant\_name', 'date', 'time', 'has\_seating\_outdoors', 'has\_vegetarian\_options', 'phone\_number', 'rating', 'address', 'number\_of\_seats', 'price\_range', 'location', 'category' ] & [ 'ReserveRestaurant', 'FindRestaurants' ] \\ \hline
+    RideSharing\_1 & [ 'destination', 'shared\_ride', 'ride\_fare', 'approximate\_ride\_duration', 'number\_of\_riders' ] & [ 'GetRide' ] \\ \hline
+    RideSharing\_2 & [ 'destination', 'ride\_type', 'ride\_fare', 'wait\_time', 'number\_of\_seats' ] & [ 'GetRide' ] \\ \hline
+    Services\_1 & [ 'stylist\_name', 'phone\_number', 'average\_rating', 'is\_unisex', 'street\_address', 'city', 'appointment\_date', 'appointment\_time' ] & [ 'BookAppointment', 'FindProvider' ] \\ \hline
+    Services\_2 & [ 'dentist\_name', 'phone\_number', 'address', 'city', 'appointment\_date', 'appointment\_time', 'offers\_cosmetic\_services' ] & [ 'BookAppointment', 'FindProvider' ] \\ \hline
+    Services\_3 & [ 'doctor\_name', 'phone\_number', 'average\_rating', 'street\_address', 'city', 'appointment\_date', 'appointment\_time', 'type' ] & [ 'BookAppointment', 'FindProvider' ] \\ \hline
+    Services\_4 & [ 'therapist\_name', 'phone\_number', 'address', 'city', 'appointment\_date', 'appointment\_time', 'type' ] & [ 'BookAppointment', 'FindProvider' ] \\ \hline
+    Travel\_1 & [ 'location', 'attraction\_name', 'category', 'phone\_number', 'free\_entry', 'good\_for\_kids' ] & [ 'FindAttractions' ] \\ \hline
+    Weather\_1 & [ 'precipitation', 'humidity', 'wind', 'temperature', 'city', 'date' ] & [ 'GetWeather' ] \\
+\end{tabularx}

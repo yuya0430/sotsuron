@@ -1,0 +1,14 @@
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {table}{\numberline {4.1}{\ignorespaces SGDデータセットにある対話例の一部}}{19}{table.4.1}
+\addvspace {10pt}
+\contentsline {table}{\numberline {5.1}{\ignorespaces SGD データセットのドメインごとの対話数（括弧内はサービスの個数）}}{22}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces SGD データセットの学習用，検証用が扱うサービスのリスト}}{22}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces SGDデータセットの学習用と検証用データにおける各対話行為の出現回数}}{23}{table.5.3}
+\addvspace {10pt}
+\contentsline {table}{\numberline {6.1}{\ignorespaces 各対話行為で提案手法を行った際の結果}}{27}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces 従来手法との比較}}{29}{table.6.2}
+\addvspace {10pt}
+\contentsline {table}{\numberline {A.1}{各スキーマのスロットとインテント}}{36}{table.7.1}

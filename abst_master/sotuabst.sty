@@ -1,0 +1,100 @@
+%% sotuabst.sty
+\input fancybox.sty
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{0.9}
+\setlength{\columnsep}{2zw}                % 段の間にどれだけのすき間を空けるか
+\addtolength{\topmargin}{-15mm}
+\addtolength{\textwidth}{19mm}
+%偶数ページ
+%\addtolength{\oddsidemargin}{-2.1cm}
+%きすうページ
+\addtolength{\oddsidemargin}{-1.2cm}
+\fancypage{\fboxsep=1.5zw\abstbox}{}
+\def\header#1{\hbox to6zw{\hskip1.5zw#1\hfil}}
+\def\field#1{\header{#1} \@nameuse{@#1}\hfil}
+\def\abstbox#1{%
+  \setbox\@tempboxa\hbox{\fbox{#1}}%
+  \vbox{\hrule\def\strut{\vrule\@width0pt\@height0.5cm\@depth0.3cm}%
+    \hbox to\wd\@tempboxa{\vrule\strut\hfil \@卒業年度 卒業研究 \hfil\vrule}%
+    \hrule%
+    \hbox to\wd\@tempboxa{\vrule\strut
+      \field{入学年度} \hfil\vrule%
+      \hbox to0.33\textwidth{\field{学籍番号}}\vrule%
+      \hbox to0.33\textwidth{\field{氏名}}\vrule}%
+    \hrule
+    \hbox to\wd\@tempboxa{\vrule\strut
+      \field{論文題目}\vrule%
+      \hbox to0.33\textwidth{\header{} \@研究室 \hfil}\vrule}%
+    \box\@tempboxa%
+  }%
+}
+
+\def\卒業年度#1{\def\@卒業年度{平成#1年度}}
+\def\入学年度#1{\def\@入学年度{平成#1年度}}
+\def\学籍番号#1{\def\@学籍番号{#1}}
+\def\研究室#1{\def\@研究室{#1}}%
+\def\題目#1{\def\@論文題目{#1}}
+\def\氏名#1{\def\@氏名{#1}}
+
+
+% セクション部のインデントとか，本文のスペース部分とかを定義しています．
+% @startsection で定義されており，4番目のフィールドをマイナスの値にす
+% るとインデントされません．また，5番目のフィールドをかえると，その後
+% の本文の状態が変わります．例えば，セクションのすぐ後に本文をかきたけ
+% れば，マイナスの値にします．
+
+\def\section{\@startsection {section}{1}{\z@}{.1ex plus 0.5ex minus 
+ .2ex}{.2ex}{\font@s}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{0.4ex plus 0.5ex minus 
+ .2ex}{.2ex}{\font@ss}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{2.5ex plus
+ 0.5ex minus .2ex}{.2ex}{\font@sss}}
+\def\paragraph{\@startsection
+ {paragraph}{4}{\z@}{2.5ex plus 0.5ex minus .2ex}{-1em}{\normalsize\bf}}
+\def\subparagraph{\@startsection
+ {subparagraph}{4}{\parindent}{2.5ex plus 0.5ex minus 
+ .2ex}{-1em}{\normalsize\bf}}
+
+% セクションの文字の大きさと書体定義しています．これは\sectionfontで定
+% 義されており，それぞれ，\section部，\subsection部，\subsubsection部
+% のフォントを表わしています．この中身を変更することで文字サイズや書体
+% を変更できます．例えば，\sectionを明朝体あるいはイタリックで，Large
+% サイズに変更するときは，
+%
+% \sectionfont{\Large\dm\it}{\jnormalsize\bf}{\jnormalsize\bf}
+%
+% と変更します．
+
+\def\sectionfont#1#2#3{\gdef\font@s{#1}\gdef\font@ss{#2}\gdef\font@sss{#3}}
+% \sectionfont{\normalsize\bf}{\normalsize\bf}{\normalsize\bf}
+\sectionfont{\normalsize\bf}{\scriptsize\bf}{\tiny\bf}
+
+%図と図の間、図と文の間など
+%\textfloatsep 0ex
+%\floatsep 0ex
+%\intextsep 0ex
+
+\textfloatsep 0ex
+\floatsep 0ex
+\intextsep -1.4ex
+
+\setcounter{topnumber}{10}
+\setcounter{dbltopnumber}{10}
+\setcounter{bottomnumber}{10}
+\def\textfraction{0.3}
+\def\topfraction{0.3}
+\def\bottomfraction{0.3}
+\def\floatpagefraction{0.3}
+\def\dbltopfraction{0.3}
+\def\dblfloatpagefraction{0.3}
+
+\long\def\@makecaption#1#2{
+ \vskip -1pt 
+ \setbox\@tempboxa\hbox{#1: #2}
+ \ifdim \wd\@tempboxa >\hsize \unhbox\@tempboxa\par \else \hbox
+to\hsize{\hfil\box\@tempboxa\hfil} 
+ \fi}
+
+\endinput % shuronabst.sty ends here.
+
+\endinput

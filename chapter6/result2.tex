@@ -1,0 +1,95 @@
+\begin{table}[thb]
+    \centering
+    \caption{各対話行為で提案手法を行った際の結果}
+    \label{tab:action_hikaku}
+    \begin{tabular}{|c||r|r|r|r|} \hline
+        &
+        \begin{tabular}{c}
+            Active \\ 
+            Intent \\
+            Accuracy
+        \end{tabular} &
+        \begin{tabular}{c}
+            Requested \\
+            Slot F1
+        \end{tabular} &
+        \begin{tabular}{c}
+            Average \\ Goal \\ Accuracy
+        \end{tabular} &
+        \begin{tabular}{c}
+            Joint \\ Goal \\ Accuracy
+        \end{tabular}\\ \hline
+        ベースライン & 0.944 & 0.946 & 0.826 & 0.515 \\ \hline
+        INFORM & 0.934 & 0.947 & 0.823 & 0.513 \\ \hline
+        REQUEST & 0.950 & 0.947 & 0.817 & 0.503 \\ \hline
+        CONFIRM & 0.934 & 0.947 & 0.823 & 0.506 \\ \hline
+        OFFER & 0.968 & 0.944 & 0.858 & 0.579 \\ \hline
+        NOTIFY\_SUCCESS & 0.940 & 0.946 & 0.829 & 0.522 \\ \hline
+        NOTIFY\_FAILURE & 0.952 & 0.947 & 0.824 & 0.513 \\ \hline
+        INFORM\_COUNT & 0.935 & 0.944 & 0.852 & 0.566 \\ \hline
+        OFFER\_INTENT & 0.944 & 0.945 & 0.825 & 0.515 \\ \hline
+        REQ\_MORE & 0.935 & 0.947 & 0.819 & 0.511 \\ \hline
+        GOODBYE & 0.947 & 0.946 & 0.824 & 0.510 \\ \hline
+    \end{tabular}
+\end{table}
+
+初めに，各対話行為タグを持つ発話がどの推定の性能を向上させるのかについて調べた．ベースラインモデルの結果と各対話行為タグで提案手法を行った際の結果を表\ref{tab:action_hikaku}に示す．スロット値推定の精度を示す Joint Goal Accuracy をベースラインと比べると，“OFFER”が6.4\%, “INFORM\_COUNT”が 5.1\% 向上している．この結果は予備実験で示した通り，“OFFER” と “INFORM\_COUNT” を持つ発話が対話状態に反映されるスロット値候補を多く与えることと，図\ref{fig:taiwarei} で示したような対話でスロット値を推定可能になったことが原因である．“INFORM\_COUNT” に関しては，“OFFER” と共存しない場合も存在するため，1.3\% の差が生まれている．また，他の対話行為の Joint Goal Accuracy はベースラインと大きな差が見られないため，スロット値推定に与える影響は少ないと考えられる．
+\par
+
+\begin{table}[thb]
+    \centering
+    \caption{サービス別のベースラインと“OFFER”のActive Intent Accuracy}
+    \label{tab:service_hikaku}
+    \begin{tabular}{|l|r|r||l|r|r|} \hline
+        & \multicolumn{1}{c|}{ベースライン} & \multicolumn{1}{c||}{OFFER} & &\multicolumn{1}{c|}{ベースライン} & \multicolumn{1}{c|}{OFFER} \\ \hline
+        Alarm\_1 & 0.795 & 0.873 & Movies\_2 & 0.977 & 0.977 \\ \hline
+        Banks\_2 & 0.991 & 0.969 & Music\_1 & 0.984 & 0.976 \\ \hline
+        Buses\_1 & 0.997 & 0.992 & RentalCars\_1 & 0.994 & 1.000 \\ \hline
+        Events\_1 & 0.988 & 0.979 & Restaurants\_2 & 0.794 & 0.947 \\ \hline
+        Flights\_3 & 0.866 & 0.933 & RideSharing\_1 & 1.000 & 0.996 \\ \hline
+        Homes\_1 & 0.986 & 0.988 & Services\_4 & 0.968 & 0.970 \\ \hline
+        Hotels\_1 & 0.971 & 0.971 & Travel\_1 & 0.991 & 0.968 \\ \hline
+        Hotels\_4 & 0.975 & 0.989 & Weather\_1 & 0.993 & 0.993 \\ \hline
+        Media\_2 & 0.943 & 0.949 & & & \\ \hline 
+    \end{tabular}
+\end{table}
+
+次に，インテント推定の精度を示す Active Intent Accuracy をベースラインと比べると，“OFFER”が2.4\% 向上している．インテント推定はユーザの目標を推定しているので，対話の流れをより良く理解できる発話を履歴として入力できれば精度の向上が見込まれる．“OFFER”は，表\ref{tab:service_hikaku}に示したように，Alarm ドメインと Flight ドメインと Restaurant ドメインのインテント推定の精度を大幅に向上させている．
+
+
+
+\begin{table}[thb]
+    \centering
+    \caption{一般的な履歴の使い方との比較}
+    \label{tab:history_hikaku}
+    \begin{tabular}{|c||r|r|r|r|r|} \hline
+        &
+        \begin{tabular}{c}
+            Active \\ 
+            Intent \\
+            Accuracy
+        \end{tabular} &
+        \begin{tabular}{c}
+            Requested \\
+            Slot F1
+        \end{tabular} &
+        \begin{tabular}{c}
+            Average \\ Goal \\ Accuracy
+        \end{tabular} &
+        \begin{tabular}{c}
+            Joint \\ Goal \\ Accuracy
+        \end{tabular} &
+        \begin{tabular}{c}
+            学習 \\ 時間
+        \end{tabular} \\ \hline
+        ベースライン & 0.940 & 0.944 & 0.816 & 0.502 & 15.3(h)\\ \hline
+        \begin{tabular}{c}
+            提案手法 \\（OFFER）
+        \end{tabular}
+        & 0.946 & 0.947 & 0.845 & 0.565 & 20.7(h) \\ \hline
+        直近3発話入力 & 0.976 & 0.947 & 0.819 & 0.523 & 20.7(h) \\ \hline
+        直近4発話入力 & 0.974 & 0.948 & 0.844 & 0.553 & 26.3(h)\\ \hline
+    \end{tabular}
+\end{table}
+
+続いて，従来の対話履歴の使用法との比較を行った．今回は提案手法として，Active Intent Accuracy, Average Goal Accuracy, Joint Goal Accuracy の3点で他の対話行為より優れた結果を残した “OFFER” を用いた提案手法と，直近の3発話を入力としたモデル，4発話を入力としたモデルとを比較した．その結果を表\ref{tab:history_hikaku}に示す．Joint Goal Accuracy に関しては，“OFFER”を用いた提案手法が直近3発話入力より5.6\% 高い数値を示している．同じ発話数でも性能が向上していることから，“OFFER”を用いた履歴抽出がスロット値推定に必要な情報を抽出できていることが分かる．また，提案手法は直近4発話入力と同等の数値を示している．提案手法は3発話入力で直近4発話入力と同等な結果を示していることから，対話状態追跡に重要な発話だけを抽出して重要ではない発話を取り除いているといえる．しかし，Active Intent Accuracy では，直近の発話を用いた方が高い数値を示している．インテント推定は対話の流れを理解する必要があるため，連続した発話を入力する方が良い．そのため，提案手法のように過去の発話を抽出したものを用いると対話が断片的になり，連続した発話を入力とする従来手法より情報が不足しているのだと考えられる．

@@ -1,0 +1,471 @@
+\setlongtables
+\begin{tabularx}{\linewidth}{|c|c|L|L|L|}
+    \caption{各スキーマの構成要素}
+    \label{tab:schema}
+    \\
+    %------ 最初のページの表の最上部 ----
+    \hline
+    サービス & 
+    \begin{tabular}{c}
+        スロット \\ or \\ インテント
+    \end{tabular}
+    & \multicolumn{1}{c|}{名称} & \multicolumn{1}{c|}{説明} &
+    \begin{tabular}{c}
+        スロット値候補 \\ or \\ 必要なスロット
+    \end{tabular} \\ \hline
+    \endfirsthead
+    %------ 2ページ以降の表の最上部 ----
+    \multicolumn{5}{l}{前ページからの続き} \\ \hline
+    サービス & 
+    \begin{tabular}{c}
+        スロット \\ or \\ インテント
+    \end{tabular}
+    & \multicolumn{1}{c|}{名称} & \multicolumn{1}{c|}{説明} &
+    \begin{tabular}{c}
+        スロット値候補 \\ or \\ 必要なスロット
+    \end{tabular} \\ \hline
+    \endhead
+    %----- ページの表の最下部 --------
+    \hline
+    \multicolumn{5}{r}{表は次ページに続く}\\
+    \endfoot
+    %----- 最終ページの表の最下部 --------
+    \hline
+    \multicolumn{5}{r}{これで終了}\\
+    \endlastfoot
+    %----------------------------------------------------------------
+    \multirow{6}{*}{Alarm\_1} & \multirow{4}{*}{スロット} & alarm\_time & Time of the alarm & [ ] \\ \cline{3-5} 
+    & & alarm\_name & Name of the alarm & [ ] \\ \cline{3-5} 
+    & & new\_alarm\_ time & Time to set for the new alarm & [ ] \\ \cline{3-5} 
+    & & new\_alarm\_ name & Name to use for the new alarm & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & GetAlarms & Get the alarms user has already set & [ ] \\ \cline{3-5} 
+    & & AddAlarm & Set a new alarm & [ 'new\_alarm\_ time' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Banks\_1} & \multirow{5}{*}{スロット} & account\_type & The account type of the user & [ 'checking', 'savings' ] \\ \cline{3-5} 
+    & & recipient\_ account\_type & The account type of the recipient whom the user is transfering money to & [ 'checking', 'savings' ] \\ \cline{3-5} 
+    & & balance & The amount of money held in a bank account at a given time & [ ] \\ \cline{3-5} 
+    & & amount & The amount of money to transfer & [ ] \\ \cline{3-5} 
+    & & recipient\_ account\_name & The account name of the recipient who is to receive the transfered money & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & CheckBalance & Check the amount of money in a user's bank account & [ 'account\_type' ] \\ \cline{3-5} 
+    & & TransferMoney & Transfer money from one bank account to another user's account & [ 'account\_type', 'amount', 'recipient\_ account\_name' ] \\ \cline{1-5}
+    \multirow{8}{*}{Banks\_2} & \multirow{6}{*}{スロット} & account\_type & The user's account type & [ 'checking', 'savings' ] \\ \cline{3-5} 
+    & & recipient\_ account\_type & The account type of the recipient to transfer the money to & [ 'checking', 'savings' ] \\ \cline{3-5} 
+    & & account\_balance & The balance in the specified account & [ ] \\ \cline{3-5} 
+    & & transfer\_amount & The amount of money to transfer & [ ] \\ \cline{3-5} 
+    & & recipient\_name & The name of the recipient to transfer the money to & [ ] \\ \cline{3-5} 
+    & & transfer\_time & Number of days for the transfer to go through & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & CheckBalance & Get the balance of an account & [ 'account\_type' ] \\ \cline{3-5} 
+    & & TransferMoney & Transfer money to another user & [ 'account\_type', 'transfer\_ amount', 'recipient\_name' ] \\ \cline{1-5}
+    \multirow{11}{*}{Buses\_1} & \multirow{9}{*}{スロット} & from\_location & City where bus is leaving from & [ ] \\ \cline{3-5} 
+    & & to\_location & City where bus is going to & [ ] \\ \cline{3-5} 
+    & & from\_station & Station where bus is leaving from & [ ] \\ \cline{3-5} 
+    & & to\_station & Station where bus is going to & [ ] \\ \cline{3-5} 
+    & & leaving\_date & Date of bus leaving for journey & [ ] \\ \cline{3-5} 
+    & & leaving\_time & Time of bus leaving for journey & [ ] \\ \cline{3-5} 
+    & & fare & Fare per ticket for journey & [ ] \\ \cline{3-5} 
+    & & travelers & Number of travelers for journey & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & transfers & Number of transfers in journey & [ '0', '1' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindBus & Find a bus journey for a given pair of cities & [ 'from\_location', 'to\_location', 'leaving\_date' ] \\ \cline{3-5} 
+    & & BuyBusTicket & Buy tickets for a bus journey & [ 'from\_location', 'to\_location', 'leaving\_date', 'leaving\_time', 'travelers' ] \\ \cline{1-5} 
+    \multirow{11}{*}{Buses\_1} & \multirow{9}{*}{スロット} & from\_location & City where bus is leaving from & [ ] \\ \cline{3-5} 
+    & & to\_location & City where bus is going to & [ ] \\ \cline{3-5} 
+    & & from\_station & Station where bus is leaving from & [ ] \\ \cline{3-5} 
+    & & to\_station & Station where bus is going to & [ ] \\ \cline{3-5} 
+    & & leaving\_date & Date of bus leaving for journey & [ ] \\ \cline{3-5} 
+    & & leaving\_time & Time of bus leaving for journey & [ ] \\ \cline{3-5} 
+    & & fare & Fare per ticket for journey & [ ] \\ \cline{3-5} 
+    & & travelers & Number of travelers for journey & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & transfers & Number of transfers in journey & [ '0', '1' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindBus & Find a bus journey for a given pair of cities & [ 'from\_location', 'to\_location', 'leaving\_date' ] \\ \cline{3-5} 
+    & & BuyBusTicket & Buy tickets for a bus journey & [ 'from\_location', 'to\_location', 'leaving\_date', 'leaving\_time', 'travelers' ] \\ \cline{1-5} 
+    \multirow{11}{*}{Buses\_2} & \multirow{9}{*}{スロット} & origin & Origin city for journey & [ ] \\ \cline{3-5} 
+    & & destination & Destination city for journey & [ ] \\ \cline{3-5} 
+    & & origin\_ station\_name & Name of the bus terminus at the origin & [ ] \\ \cline{3-5} 
+    & & destination\_ station\_name & Name of the bus terminus at the destination & [ ] \\ \cline{3-5} 
+    & & departure\_date & Date of bus departure & [ ] \\ \cline{3-5} 
+    & & price & Price per ticket of the itinerary & [ ] \\ \cline{3-5} 
+    & & departure\_time & Time of bus departure & [ ] \\ \cline{3-5} 
+    & & group\_size & Size of group for the booking & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & fare\_type & Type of fare for the booking & [ 'Economy', 'Economy extra', 'Flexible' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindBus & Find a bus itinerary between cities for a given date & [ 'origin', 'destination', 'departure\_date' ] \\ \cline{3-5} 
+    & & BuyBusTicket & Buy tickets for a bus itinerary & [ 'origin', 'destination', 'departure\_date', 'departure\_time', 'group\_size' ] \\ \cline{1-5} 
+    \multirow{9}{*}{Calendar\_1} & \multirow{6}{*}{スロット} & event\_date & Date of event or for checking availability & [ ] \\ \cline{3-5} 
+    & & event\_time & Start time of event & [ ] \\ \cline{3-5} 
+    & & event\_location & Location of event & [ ] \\ \cline{3-5} 
+    & & event\_name & Title of event & [ ] \\ \cline{3-5} 
+    & & available\_ start\_time & Starting time of available time slot & [ ] \\ \cline{3-5} 
+    & & available\_ end\_time & Ending time of available time slot & [ ] \\ \cline{2-5} 
+    & \multirow{3}{*}{インテント} & GetEvents & Get list of all calendar events for the user on a given day & [ 'event\_date' ] \\ \cline{3-5} 
+    & & GetAvailable Time & Get a list of available times for the user on a given day & [ 'event\_date' ] \\ \cline{3-5} 
+    & & AddEvent & Add event to the user's calendar & [ 'event\_name', 'event\_date', 'event\_location', 'event\_time' ] \\ \cline{1-5} 
+    \multirow{11}{*}{Events\_1} & \multirow{9}{*}{スロット} & category & Type of event & [ 'Music', 'Sports' ] \\ \cline{3-5} 
+    & & subcategory & Subcategory of event, either a music genre or sport name & [ ] \\ \cline{3-5} 
+    & & event\_name & Name of event & [ ] \\ \cline{3-5} 
+    & & date & Date of occurrence of event & [ ] \\ \cline{3-5} 
+    & & time & Time when the event is scheduled to start & [ ] \\ \cline{3-5} 
+    & & number\_of\_seats & Number of seats to find event tickets for & [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ] \\ \cline{3-5} 
+    & & city\_of\_event & City where event is happening & [ ] \\ \cline{3-5} 
+    & & event\_location & Name of event location & [ ] \\ \cline{3-5} 
+    & & address\_of\_location & Street address of event location & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindEvents & Find events in a given city & [ 'category', 'city\_of\_event' ] \\ \cline{3-5} 
+    & & BuyEventTickets & Buy tickets for an event & [ 'event\_name', 'number\_of\_seats', 'date', 'city\_of\_event' ] \\ \cline{1-5} 
+    \multirow{11}{*}{Events\_1} & \multirow{9}{*}{スロット} & category & Type of event & [ 'Music', 'Sports' ] \\ \cline{3-5} 
+    & & subcategory & Subcategory of event, either a music genre or sport name & [ ] \\ \cline{3-5} 
+    & & event\_name & Name of event & [ ] \\ \cline{3-5} 
+    & & date & Date of occurrence of event & [ ] \\ \cline{3-5} 
+    & & time & Time when the event is scheduled to start & [ ] \\ \cline{3-5} 
+    & & number\_of\_seats & Number of seats to find event tickets for & [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ] \\ \cline{3-5} 
+    & & city\_of\_event & City where event is happening & [ ] \\ \cline{3-5} 
+    & & event\_location & Name of event location & [ ] \\ \cline{3-5} 
+    & & address\_of\_location & Street address of event location & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindEvents & Find events in a given city & [ 'category', 'city\_of\_event' ] \\ \cline{3-5} 
+    & & BuyEventTickets & Buy tickets for an event & [ 'event\_name', 'number\_of\_seats', 'date', 'city\_of\_event' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Events\_2} & \multirow{9}{*}{スロット} & event\_type & Type of event & [ 'Music', 'Sports' ] \\ \cline{3-5} 
+    & & category & The sport or music subcategory & [ ] \\ \cline{3-5} 
+    & & event\_name & Name of match or artist for event & [ ] \\ \cline{3-5} 
+    & & date & Date of event & [ ] \\ \cline{3-5} 
+    & & time & Starting time for event & [ ] \\ \cline{3-5} 
+    & & number\_of\_tickets & Number of tickets to buy for event & [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ] \\ \cline{3-5} 
+    & & city & City where the event is taking place & [ ] \\ \cline{3-5} 
+    & & venue & Exact venue of event & [ ] \\ \cline{3-5} 
+    & & venue\_address & Address of event venue & [ ] \\ \cline{2-5} 
+    & \multirow{3}{*}{インテント} & FindEvents & Find concerts and games happening in your area & [ 'event\_type', 'city' ] \\ \cline{3-5} 
+    & & GetEventDates & Get dates on which a given event is taking place & [ 'event\_name', 'city' ] \\ \cline{3-5} 
+    & & BuyEventTickets & Buy tickets for an event & [ 'event\_name', 'number\_of\_tickets', 'date', 'city' ] \\ \cline{1-5} 
+    \multirow{20}{*}{Flights\_1} & \multirow{16}{*}{スロット} & passengers & Number of passengers in the booking & [ '1', '2', '3', '4' ] \\ \cline{3-5} 
+    & & seating\_class & Seating class for the booking & [ 'Economy', 'Premium Economy', 'Business', 'First Class' ] \\ \cline{3-5} 
+    & & origin\_city & Starting city for the trip & [ ] \\ \cline{3-5} 
+    & & destination\_city & Ending city for the trip & [ ] \\ \cline{3-5} 
+    & & origin\_airport & Airport at the starting city for the trip & [ ] \\ \cline{3-5} 
+    & & destination\_airport & Airport at the ending city for the trip & [ ] \\ \cline{3-5} 
+    & & departure\_date & Start date for the trip & [ ] \\ \cline{3-5} 
+    & & return\_date & Date of the return flight & [ ] \\ \cline{3-5} 
+    & & number\_stops & Number of layovers in the flight & [ '0', '1' ] \\ \cline{3-5} 
+    & & outbound\_departure\_time & Departure time for the outbound leg flight & [ ] \\ \cline{3-5} 
+    & & outbound\_arrival\_time & Arrival time for the outbound leg flight & [ ] \\ \cline{3-5} 
+    & & inbound\_arrival\_time & Arrival time for the return leg flight & [ ] \\ \cline{3-5} 
+    & & inbound\_departure\_time & Departure time for the return leg flight & [ ] \\ \cline{3-5} 
+    & & price & Price of the booking per passenger & [ ] \\ \cline{3-5} 
+    & & refundable & Whether the booking is refundable or not & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & airlines & Name of airline & [ 'United Airlines', 'American Airlines', 'Delta Airlines', 'Southwest Airlines', 'Alaska Airlines', 'British Airways', 'Air Canada', 'Air France' ] \\ \cline{2-5} 
+    & \multirow{4}{*}{インテント} & SearchOnewayFlight & Search for one-way flights to a destination & [ 'origin\_city', 'destination\_city', 'departure\_date' ] \\ \cline{3-5} 
+    & & SearchRoundtripFlights & Search for round-trip flights to a destination & [ 'origin\_city', 'destination\_city', 'departure\_date', 'return\_date' ] \\ \cline{3-5} 
+    & & ReserveOnewayFlight & Reserve a one-way flight & [ 'origin\_city', 'destination\_city', 'airlines', 'departure\_date' ] \\ \cline{3-5} 
+    & & ReserveRoundtripFlights & Reserve a round-trip flight & [ 'origin\_city', 'destination\_city', 'airlines', 'departure\_date', 'return\_date', 'outbound\_departure\_time', 'inbound\_departure\_time' ] \\ \cline{1-5} 
+    \multirow{18}{*}{Flights\_2} & \multirow{16}{*}{スロット} & passengers & Number of passengers to book tickets for & [ '1', '2', '3', '4' ] \\ \cline{3-5} 
+    & & seating\_class & Seating class for the flight tickets & [ 'Economy', 'Premium Economy', 'Business', 'First Class' ] \\ \cline{3-5} 
+    & & origin & City of origin for the flight & [ ] \\ \cline{3-5} 
+    & & destination & City of destination for the flight & [ ] \\ \cline{3-5} 
+    & & origin\_airport & Airport where the flight is departing from & [ ] \\ \cline{3-5} 
+    & & destination\_airport & Airport where the flight is arriving to & [ ] \\ \cline{3-5} 
+    & & departure\_date & Date of departure flight on the ticket & [ ] \\ \cline{3-5} 
+    & & return\_date & Date of return flight on the ticket & [ ] \\ \cline{3-5} 
+    & & number\_stops & Number of stopovers made by the flight & [ '0', '1' ] \\ \cline{3-5} 
+    & & outbound\_departure\_time & Departure time of the origin-destination flight & [ ] \\ \cline{3-5} 
+    & & outbound\_arrival\_time & Arrival time of the origin-destination flight & [ ] \\ \cline{3-5} 
+    & & inbound\_arrival\_time & Arrival time of the destination-origin flight & [ ] \\ \cline{3-5} 
+    & & inbound\_departure\_time & Departure time of the destination-origin flight & [ ] \\ \cline{3-5} 
+    & & fare & Ticket fare for each passenger & [ ] \\ \cline{3-5} 
+    & & is\_redeye & Boolean flag indicating whether the flight is a red-eye flight & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & airlines & Name of the airline to book with & [ 'United Airlines', 'American Airlines', 'Delta Airlines', 'Southwest Airlines', 'Alaska Airlines', 'British Airways', 'Air Canada', 'Air France' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & SearchOnewayFlight & Search for a one way flight with your set of preferences & [ 'origin', 'destination', 'departure\_date' ] \\ \cline{3-5} 
+    & & SearchRoundtripFlights & Search for round trip flights with your set of preferences & [ 'origin', 'destination', 'departure\_date', 'return\_date' ] \\ \cline{1-5} 
+    \multirow{19}{*}{Flights\_3} & \multirow{17}{*}{スロット} & passengers & Number of passengers to find flight seats for & [ '1', '2', '3', '4' ] \\ \cline{3-5} 
+    & & flight\_class & Fare class of flight booking & [ 'Economy', 'Premium Economy', 'Business', 'First Class' ] \\ \cline{3-5} 
+    & & origin\_city & City in which the journey originates & [ ] \\ \cline{3-5} 
+    & & destination\_city & City in which the journey ends & [ ] \\ \cline{3-5} 
+    & & origin\_airport\_name & Number of the airport flying out from & [ ] \\ \cline{3-5} 
+    & & destination\_airport\_name & Number of the airport flying to & [ ] \\ \cline{3-5} 
+    & & departure\_date & Date of departure flight & [ ] \\ \cline{3-5} 
+    & & return\_date & Date of return flight & [ ] \\ \cline{3-5} 
+    & & number\_stops & Number of stops in the itinerary & [ '0', '1' ] \\ \cline{3-5} 
+    & & outbound\_departure\_time & Local time of departure of flight from origin to destination & [ ] \\ \cline{3-5} 
+    & & outbound\_arrival\_time & Local time of arrival of flight from origin to destination & [ ] \\ \cline{3-5} 
+    & & inbound\_arrival\_time & Local time of arrival of flight from destination to origin & [ ] \\ \cline{3-5} 
+    & & inbound\_departure\_time & Local time of departure of flight from destination to origin & [ ] \\ \cline{3-5} 
+    & & price & Price per passenger of the itinerary & [ ] \\ \cline{3-5} 
+    & & number\_checked\_bags & Number of bags to check in & [ '0', '1', '2' ] \\ \cline{3-5} 
+    & & airlines & Name of airline operating the flight & [ 'United Airlines', 'American Airlines', 'Delta Airlines', 'Southwest Airlines', 'Alaska Airlines', 'British Airways', 'Air Canada', 'Air France' ] \\ \cline{3-5} 
+    & & arrives\_next\_day & Whether the flight arrives the next day & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & SearchOnewayFlight & Search for one-way flights to the destination of choice & [ 'origin\_city', 'destination\_city', 'departure\_date' ] \\ \cline{3-5} 
+    & & SearchRoundtripFlights & Search for round-trip flights to the destination of choice & [ 'origin\_city', 'destination\_city', 'departure\_date', 'return\_date' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Homes\_1} & \multirow{10}{*}{スロット} & area & City where the apartment is located & [ ] \\ \cline{3-5} 
+    & & address & Address of the apartment & [ ] \\ \cline{3-5} 
+    & & property\_name & Name of the apartment & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the apartment & [ ] \\ \cline{3-5} 
+    & & furnished & Boolean flag indicating if the property is furnished & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & pets\_allowed & Boolean flag indicating if pets are allowed & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & rent & Rent per month of the apartment & [ ] \\ \cline{3-5} 
+    & & visit\_date & Date for the visit to the apartment & [ ] \\ \cline{3-5} 
+    & & number\_of\_beds & Number of bed rooms & [ '1', '2', '3', '4' ] \\ \cline{3-5} 
+    & & number\_of\_baths & Number of baths in the apartment & [ '1', '2', '3', '4' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindApartment & Find an apartment in a city for a given number of bedrooms & [ 'area', 'number\_of\_beds' ] \\ \cline{3-5} 
+    & & ScheduleVisit & Schedule a visit for a given property on a particular date & [ 'property\_name', 'visit\_date' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Homes\_1} & \multirow{10}{*}{スロット} & area & City where the apartment is located & [ ] \\ \cline{3-5} 
+    & & address & Address of the apartment & [ ] \\ \cline{3-5} 
+    & & property\_name & Name of the apartment & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the apartment & [ ] \\ \cline{3-5} 
+    & & furnished & Boolean flag indicating if the property is furnished & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & pets\_allowed & Boolean flag indicating if pets are allowed & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & rent & Rent per month of the apartment & [ ] \\ \cline{3-5} 
+    & & visit\_date & Date for the visit to the apartment & [ ] \\ \cline{3-5} 
+    & & number\_of\_beds & Number of bed rooms & [ '1', '2', '3', '4' ] \\ \cline{3-5} 
+    & & number\_of\_baths & Number of baths in the apartment & [ '1', '2', '3', '4' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindApartment & Find an apartment in a city for a given number of bedrooms & [ 'area', 'number\_of\_beds' ] \\ \cline{3-5} 
+    & & ScheduleVisit & Schedule a visit for a given property on a particular date & [ 'property\_name', 'visit\_date' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Hotels\_1} & \multirow{10}{*}{スロット} & destination & Location of the hotel & [ ] \\ \cline{3-5} 
+    & & number\_of\_rooms & Number of rooms in the reservation & [ '1', '2', '3' ] \\ \cline{3-5} 
+    & & check\_in\_date & Start date for the reservation & [ ] \\ \cline{3-5} 
+    & & number\_of\_days & Number of days in the reservation & [ ] \\ \cline{3-5} 
+    & & star\_rating & Star rating of the hotel & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & hotel\_name & Name of the hotel & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the hotel & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the hotel & [ ] \\ \cline{3-5} 
+    & & price\_per\_night & Price per night for the reservation & [ ] \\ \cline{3-5} 
+    & & has\_wifi & Boolean flag indicating if the hotel has wifi & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveHotel & Reserve a selected hotel for given dates & [ 'hotel\_name', 'check\_in\_date', 'number\_of\_days', 'destination' ] \\ \cline{3-5} 
+    & & SearchHotel & Find a hotel at a given location & [ 'destination' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Hotels\_1} & \multirow{10}{*}{スロット} & destination & Location of the hotel & [ ] \\ \cline{3-5} 
+    & & number\_of\_rooms & Number of rooms in the reservation & [ '1', '2', '3' ] \\ \cline{3-5} 
+    & & check\_in\_date & Start date for the reservation & [ ] \\ \cline{3-5} 
+    & & number\_of\_days & Number of days in the reservation & [ ] \\ \cline{3-5} 
+    & & star\_rating & Star rating of the hotel & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & hotel\_name & Name of the hotel & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the hotel & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the hotel & [ ] \\ \cline{3-5} 
+    & & price\_per\_night & Price per night for the reservation & [ ] \\ \cline{3-5} 
+    & & has\_wifi & Boolean flag indicating if the hotel has wifi & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveHotel & Reserve a selected hotel for given dates & [ 'hotel\_name', 'check\_in\_date', 'number\_of\_days', 'destination' ] \\ \cline{3-5} 
+    & & SearchHotel & Find a hotel at a given location & [ 'destination' ] \\ \cline{1-5} 
+    \multirow{11}{*}{Hotels\_2} & \multirow{9}{*}{スロット} & where\_to & Location of the house & [ ] \\ \cline{3-5} 
+    & & number\_of\_adults & Number of people for the reservation & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & check\_in\_date & Start date for the reservation or to find the house & [ ] \\ \cline{3-5} 
+    & & check\_out\_date & End date for the reservation or to find the house & [ ] \\ \cline{3-5} 
+    & & rating & Review rating of the house & [ ] \\ \cline{3-5} 
+    & & address & Address of the house & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the house & [ ] \\ \cline{3-5} 
+    & & total\_price & Price per night of the house & [ ] \\ \cline{3-5} 
+    & & has\_laundry\_service & Boolean flag indicating if the house has laundry service & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & BookHouse & Book the selected house for given dates and number of adults & [ 'where\_to', 'number\_of\_adults', 'check\_in\_date', 'check\_out\_date' ] \\ \cline{3-5} 
+    & & SearchHouse & Find a house at a given location & [ 'where\_to' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Hotels\_3} & \multirow{10}{*}{スロット} & location & Location of the hotel & [ ] \\ \cline{3-5} 
+    & & number\_of\_rooms & Number of rooms to book & [ '1', '2', '3' ] \\ \cline{3-5} 
+    & & check\_in\_date & Start date for the hotel reservation & [ ] \\ \cline{3-5} 
+    & & check\_out\_date & End date for the hotel reservation & [ ] \\ \cline{3-5} 
+    & & average\_rating & Average review rating for the hotel & [ ] \\ \cline{3-5} 
+    & & hotel\_name & Name of the hotel & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the hotel & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the hotel & [ ] \\ \cline{3-5} 
+    & & price & Total price for the stay & [ ] \\ \cline{3-5} 
+    & & pets\_welcome & Boolean flag indicating if pets are allowed in the hotel & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveHotel & Reserve a selected hotel for given dates & [ 'hotel\_name', 'location', 'check\_in\_date', 'check\_out\_date' ] \\ \cline{3-5} 
+    & & SearchHotel & Search for a hotel based on location & [ 'location' ] \\ \cline{1-5} 
+    \multirow{12}{*}{Hotels\_4} & \multirow{10}{*}{スロット} & location & City or town where the accommodation is located & [ ] \\ \cline{3-5} 
+    & & number\_of\_rooms & Number of rooms to reserve & [ '1', '2', '3' ] \\ \cline{3-5} 
+    & & check\_in\_date & Check in date for reservation & [ ] \\ \cline{3-5} 
+    & & stay\_length & Length of stay in days & [ ] \\ \cline{3-5} 
+    & & star\_rating & Star rating of the accommodation & [ '1', '2', '3', '4', '5' ] \\ \cline{3-5} 
+    & & place\_name & Name of the accommodation & [ ] \\ \cline{3-5} 
+    & & street\_address & Street address of the accommodation & [ ] \\ \cline{3-5} 
+    & & phone\_number & Contact phone number of the accommodation & [ ] \\ \cline{3-5} 
+    & & price\_per\_night & Price per night for the stay & [ ] \\ \cline{3-5} 
+    & & smoking\_allowed & Whether or not smoking is allowed inside the place & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveHotel & Reserve rooms at a selected place for given dates & [ 'place\_name', 'check\_in\_date', 'stay\_length', 'location' ] \\ \cline{3-5} 
+    & & SearchHotel & Look for accommodation in a city of choice & [ 'location' ] \\ \cline{1-5} 
+    \multirow{6}{*}{Media\_1} & \multirow{4}{*}{スロット} & title & Title of the movie & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the movie & [ ] \\ \cline{3-5} 
+    & & subtitles & Boolean flag indicating if subtitles are desired for this movie & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & directed\_by & Name of the director of the movie & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindMovies & Find movies by genre and optionally director & [ 'genre' ] \\ \cline{3-5} 
+    & & PlayMovie & Play the selected movie & [ 'title' ] \\ \cline{1-5} 
+    \multirow{8}{*}{Media\_2} & \multirow{6}{*}{スロット} & movie\_name & Name of the movie & [ ] \\ \cline{3-5} 
+    & & genre & Main genre of the movie & [ ] \\ \cline{3-5} 
+    & & subtitle\_language & Language to use for subtitles (or None for no subtitles) & [ 'None', 'English', 'Mandarin', 'Spanish' ] \\ \cline{3-5} 
+    & & director & Name of the director of the movie & [ ] \\ \cline{3-5} 
+    & & actors & Name of an actor starring in the movie & [ ] \\ \cline{3-5} 
+    & & price & Cost of renting movie & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & FindMovies & Find movies to watch by genre and, optionally, director or actors & [ 'genre' ] \\ \cline{3-5} 
+    & & RentMovie & Rent a movie to watch, with optional subtitles & [ 'movie\_name' ] \\ \cline{1-5} 
+    \multirow{13}{*}{Movies\_1} & \multirow{10}{*}{スロット} & price & Price per ticket & [ ] \\ \cline{3-5} 
+    & & number\_of\_tickets & Number of the movie tickets to be purchased & [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ] \\ \cline{3-5} 
+    & & show\_type & Type of show & [ 'regular', '3d', 'imax' ] \\ \cline{3-5} 
+    & & theater\_name & Name of the theatre & [ ] \\ \cline{3-5} 
+    & & show\_time & Time of the show & [ ] \\ \cline{3-5} 
+    & & show\_date & Date of the show & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the movie & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the theatre & [ ] \\ \cline{3-5} 
+    & & location & City where the theatre is located & [ ] \\ \cline{3-5} 
+    & & movie\_name & Name of the movie & [ ] \\ \cline{2-5} 
+    & \multirow{3}{*}{インテント} & BuyMovieTickets & Buy movie tickets for a particular show & [ 'movie\_name', 'number\_of\_tickets', 'show\_date', 'location', 'show\_time', 'show\_type' ] \\ \cline{3-5} 
+    & & FindMovies & Search for movies by location, genre or other attributes & [ 'location' ] \\ \cline{3-5} 
+    & & GetTimesForMovie & Get show times for a movie at a location on a given date & [ 'movie\_name', 'location', 'show\_date' ] \\ \cline{1-5} 
+    \multirow{6}{*}{Movies\_2} & \multirow{5}{*}{スロット} & title & Title for movie & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the movie & [ ] \\ \cline{3-5} 
+    & & aggregate\_rating & Aggregate user rating for movie, scale of 10 & [ ] \\ \cline{3-5} 
+    & & starring & Name of actor starring in movie & [ ] \\ \cline{3-5} 
+    & & director & Name of director of the movie & [ ] \\ \cline{2-5} 
+    & & FindMovies & Discover movies by genre, director and actors & [ ] \\ \cline{1-5} 
+    \multirow{8}{*}{Music\_1} & \multirow{6}{*}{スロット} & song\_name & Name of the song & [ ] \\ \cline{3-5} 
+    & & artist & Artist who performed the song & [ ] \\ \cline{3-5} 
+    & & album & Album the song belongs to & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the song & [ ] \\ \cline{3-5} 
+    & & year & Year in which the song was released & [ '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019' ] \\ \cline{3-5} 
+    & & playback\_device & Playback device on which the song is to be played & [ 'TV', 'Kitchen speaker', 'Bedroom speaker' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & LookupSong & Search for a song & [ ] \\ \cline{3-5} 
+    & & PlaySong & Play the selected song on the device & [ 'song\_name' ] \\ \cline{1-5} 
+    \multirow{8}{*}{Music\_1} & \multirow{6}{*}{スロット} & song\_name & Name of the song & [ ] \\ \cline{3-5} 
+    & & artist & Artist who performed the song & [ ] \\ \cline{3-5} 
+    & & album & Album the song belongs to & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the song & [ ] \\ \cline{3-5} 
+    & & year & Year in which the song was released & [ '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019' ] \\ \cline{3-5} 
+    & & playback\_device & Playback device on which the song is to be played & [ 'TV', 'Kitchen speaker', 'Bedroom speaker' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & LookupSong & Search for a song & [ ] \\ \cline{3-5} 
+    & & PlaySong & Play the selected song on the device & [ 'song\_name' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Music\_2} & \multirow{5}{*}{スロット} & song\_name & Name of the song & [ ] \\ \cline{3-5} 
+    & & artist & Name of the artist the song is performed by & [ ] \\ \cline{3-5} 
+    & & album & Album the song belongs to & [ ] \\ \cline{3-5} 
+    & & genre & Genre of the song & [ ] \\ \cline{3-5} 
+    & & playback\_device & Playback device on which the song is to be played & [ 'TV', 'kitchen speaker', 'bedroom speaker' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & LookupMusic & Search for a song based on the name and optionally other attributes & [ ] \\ \cline{3-5} 
+    & & PlayMedia & Play a song by its name and optionally artist & [ 'song\_name' ] \\ \cline{1-5} 
+    \multirow{10}{*}{RentalCars\_1} & \multirow{8}{*}{スロット} & type & Category to which rental car belongs & [ 'Compact', 'Standard', 'Full-size' ] \\ \cline{3-5} 
+    & & car\_name & Model name of rental car & [ ] \\ \cline{3-5} 
+    & & pickup\_location & Location of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_date & Date of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_time & Time of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_city & City where rental car will be picked up & [ ] \\ \cline{3-5} 
+    & & dropoff\_date & Date of rental car drop-off & [ ] \\ \cline{3-5} 
+    & & total\_price & Total price of car rental & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & GetCarsAvailable & Search for available rental cars by city and date & [ 'pickup\_city', 'pickup\_date', 'pickup\_time', 'dropoff\_date' ] \\ \cline{3-5} 
+    & & ReserveCar & Reserve car rental for given dates and location & [ 'pickup\_location', 'pickup\_date', 'pickup\_time', 'dropoff\_date', 'type' ] \\ \cline{1-5} 
+    \multirow{10}{*}{RentalCars\_1} & \multirow{8}{*}{スロット} & type & Category to which rental car belongs & [ 'Compact', 'Standard', 'Full-size' ] \\ \cline{3-5} 
+    & & car\_name & Model name of rental car & [ ] \\ \cline{3-5} 
+    & & pickup\_location & Location of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_date & Date of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_time & Time of rental car pickup & [ ] \\ \cline{3-5} 
+    & & pickup\_city & City where rental car will be picked up & [ ] \\ \cline{3-5} 
+    & & dropoff\_date & Date of rental car drop-off & [ ] \\ \cline{3-5} 
+    & & total\_price & Total price of car rental & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & GetCarsAvailable & Search for available rental cars by city and date & [ 'pickup\_city', 'pickup\_date', 'pickup\_time', 'dropoff\_date' ] \\ \cline{3-5} 
+    & & ReserveCar & Reserve car rental for given dates and location & [ 'pickup\_location', 'pickup\_date', 'pickup\_time', 'dropoff\_date', 'type' ] \\ \cline{1-5} 
+    \multirow{10}{*}{RentalCars\_2} & \multirow{8}{*}{スロット} & car\_type & Type of car for rental & [ 'Compact', 'Standard', 'Full-size' ] \\ \cline{3-5} 
+    & & car\_name & Name of car model & [ ] \\ \cline{3-5} 
+    & & pickup\_location & Pickup location for car rental & [ ] \\ \cline{3-5} 
+    & & pickup\_date & Date of pickup for car rental & [ ] \\ \cline{3-5} 
+    & & pickup\_time & Time of pickup for car rental & [ ] \\ \cline{3-5} 
+    & & pickup\_city & City in which to pick up rental car & [ ] \\ \cline{3-5} 
+    & & dropoff\_date & End date of car rental reservation & [ ] \\ \cline{3-5} 
+    & & total\_price & Total price of rental reservation & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & GetCarsAvailable & See available cars for rental in a particular city and a date & [ 'pickup\_city', 'pickup\_date', 'pickup\_time', 'dropoff\_date' ] \\ \cline{3-5} 
+    & & ReserveCar & Reserve a rental car for specified pickup location and dates & [ 'pickup\_location', 'pickup\_date', 'pickup\_time', 'dropoff\_date', 'car\_type' ] \\ \cline{1-5} 
+    \multirow{13}{*}{Restaurants\_1} & \multirow{11}{*}{スロット} & restaurant\_name & Name of the restaurant & [ ] \\ \cline{3-5} 
+    & & date & Date for the reservation or to find availability & [ ] \\ \cline{3-5} 
+    & & time & Time for the reservation or to find availability & [ ] \\ \cline{3-5} 
+    & & serves\_alcohol & Boolean flag indicating if the restaurant serves alcohol & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & has\_live\_music & Boolean flag indicating if the restaurant has live music & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the restaurant & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the restaurant & [ ] \\ \cline{3-5} 
+    & & party\_size & Party size for a reservation & [ '1', '2', '3', '4', '5', '6' ] \\ \cline{3-5} 
+    & & price\_range & Price range for the restaurant & [ 'inexpensive', 'moderate', 'expensive', 'very expensive' ] \\ \cline{3-5} 
+    & & city & City in which the restaurant is located & [ ] \\ \cline{3-5} 
+    & & cuisine & Cuisine of food served in the restaurant & [ 'Mexican', 'Chinese', 'Indian', 'American', 'Italian' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveRestaurant & Reserve a table at a restaurant & [ 'restaurant\_name', 'city', 'time' ] \\ \cline{3-5} 
+    & & FindRestaurants & Find a restaurant of a particular cuisine in a city & [ 'cuisine', 'city' ] \\ \cline{1-5} 
+    \multirow{14}{*}{Restaurants\_2} & \multirow{12}{*}{スロット} & restaurant\_name & Name of the restaurant & [ ] \\ \cline{3-5} 
+    & & date & Tentative date of restaurant reservation & [ ] \\ \cline{3-5} 
+    & & time & Tentative time of restaurant reservation & [ ] \\ \cline{3-5} 
+    & & has\_seating\_outdoors & Whether the restaurant has outdoor seating available & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & has\_vegetarian\_options & Whether the restaurant has adequate vegetarian options & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & phone\_number & Phone number to contact restaurant & [ ] \\ \cline{3-5} 
+    & & rating & Average user rating for restaurant on a scale of 5 & [ ] \\ \cline{3-5} 
+    & & address & Address of restaurant & [ ] \\ \cline{3-5} 
+    & & number\_of\_seats & Number of seats to reserve at the restaurant & [ '1', '2', '3', '4', '5', '6' ] \\ \cline{3-5} 
+    & & price\_range & Price range for the restaurant & [ 'cheap', 'moderate', 'pricey', 'ultra high-end' ] \\ \cline{3-5} 
+    & & location & City where the restaurant is located & [ ] \\ \cline{3-5} 
+    & & category & The category of food offered by the restaurant & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & ReserveRestaurant & Make a table reservation at a restaurant & [ 'restaurant\_name', 'location', 'time' ] \\ \cline{3-5} 
+    & & FindRestaurants & Find restaurants by location and by category & [ 'category', 'location' ] \\ \cline{1-5} 
+    \multirow{6}{*}{RideSharing\_1} & \multirow{5}{*}{スロット} & destination & Destination for taxi ride & [ ] \\ \cline{3-5} 
+    & & shared\_ride & Boolean flag whether ride is shared with other passengers & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & ride\_fare & Total fare for taxi ride & [ ] \\ \cline{3-5} 
+    & & approximate\_ride\_duration & Approximate duration of ride to the destination & [ ] \\ \cline{3-5} 
+    & & number\_of\_riders & Number of riders to call taxi for & [ '1', '2', '3', '4' ] \\ \cline{2-5} 
+    & & GetRide & Call a taxi to head to a given destination & [ 'destination', 'number\_of\_riders', 'shared\_ride' ] \\ \cline{1-5} 
+    \multirow{6}{*}{RideSharing\_1} & \multirow{5}{*}{スロット} & destination & Destination for taxi ride & [ ] \\ \cline{3-5} 
+    & & shared\_ride & Boolean flag whether ride is shared with other passengers & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & ride\_fare & Total fare for taxi ride & [ ] \\ \cline{3-5} 
+    & & approximate\_ride\_duration & Approximate duration of ride to the destination & [ ] \\ \cline{3-5} 
+    & & number\_of\_riders & Number of riders to call taxi for & [ '1', '2', '3', '4' ] \\ \cline{2-5} 
+    & & GetRide & Call a taxi to head to a given destination & [ 'destination', 'number\_of\_riders', 'shared\_ride' ] \\ \cline{1-5} 
+    \multirow{6}{*}{RideSharing\_2} & \multirow{5}{*}{スロット} & destination & Destination address or location for cab & [ ] \\ \cline{3-5} 
+    & & ride\_type & Type of cab ride & [ 'Pool', 'Regular', 'Luxury' ] \\ \cline{3-5} 
+    & & ride\_fare & Total fare for cab ride & [ ] \\ \cline{3-5} 
+    & & wait\_time & Expected waiting time for pick-up by cab & [ ] \\ \cline{3-5} 
+    & & number\_of\_seats & Number of seats to reserve in the cab & [ '1', '2', '3', '4' ] \\ \cline{2-5} 
+    & & GetRide & Book a cab for any destination, number of seats and ride type & [ 'destination', 'number\_of\_seats', 'ride\_type' ] \\ \cline{1-5} 
+    \multirow{10}{*}{Services\_1} & \multirow{8}{*}{スロット} & stylist\_name & Name of the hair stylist/salon & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the stylist/salon & [ ] \\ \cline{3-5} 
+    & & average\_rating & Average review rating for the stylist/salon & [ ] \\ \cline{3-5} 
+    & & is\_unisex & Boolean flag indicating if the salon is unisex & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & street\_address & Address of the stylist/salon & [ ] \\ \cline{3-5} 
+    & & city & City where the salon is located & [ ] \\ \cline{3-5} 
+    & & appointment\_date & Date for the appointment & [ ] \\ \cline{3-5} 
+    & & appointment\_time & Time of the appointment & [ ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & BookAppointment & Book an appointment at a hair stylist & [ 'stylist\_name', 'appointment\_time', 'appointment\_date' ] \\ \cline{3-5} 
+    & & FindProvider & Search for a hair stylist by city and optionally other attributes & [ 'city' ] \\ \cline{1-5} 
+    \multirow{9}{*}{Services\_2} & \multirow{7}{*}{スロット} & dentist\_name & Name of the dentist & [ ] \\ \cline{3-5} 
+    & & phone\_number & Phone number of the dentist & [ ] \\ \cline{3-5} 
+    & & address & Address of the dentist & [ ] \\ \cline{3-5} 
+    & & city & City where the dentist is located & [ ] \\ \cline{3-5} 
+    & & appointment\_date & Date for the appointment & [ ] \\ \cline{3-5} 
+    & & appointment\_time & Time for the appointment & [ ] \\ \cline{3-5} 
+    & & offers\_cosmetic\_services & Boolean flag indicating if the dentist offers cosmetic services & [ 'True', 'False' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & BookAppointment & Book an appointment at a dentist for a given time and date & [ 'dentist\_name', 'appointment\_time', 'appointment\_date' ] \\ \cline{3-5} 
+    & & FindProvider & Find a dentist by location and optionally by services offered & [ 'city' ] \\ \cline{1-5} 
+    \multirow{10}{*}{Services\_3} & \multirow{8}{*}{スロット} & doctor\_name & Name of the doctor or the medical practice & [ ] \\ \cline{3-5} 
+    & & phone\_number & Contact number for the doctor or the medical practice & [ ] \\ \cline{3-5} 
+    & & average\_rating & Average review rating of the doctor & [ ] \\ \cline{3-5} 
+    & & street\_address & Address of the doctor & [ ] \\ \cline{3-5} 
+    & & city & City where the doctor is located & [ ] \\ \cline{3-5} 
+    & & appointment\_date & Date for scheduling the appointment with the doctor & [ ] \\ \cline{3-5} 
+    & & appointment\_time & Time for the appointment with the doctor & [ ] \\ \cline{3-5} 
+    & & type & Speciality of the doctor & [ 'Gynecologist', 'ENT Specialist', 'Ophthalmologist', 'General Practitioner', 'Dermatologist' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & BookAppointment & Book an appointment with a specific doctor for the given date and time & [ 'doctor\_name', 'appointment\_time', 'appointment\_date' ] \\ \cline{3-5} 
+    & & FindProvider & Find a medical service provider based on their location and speciality & [ 'city', 'type' ] \\ \cline{1-5} 
+    \multirow{9}{*}{Services\_4} & \multirow{7}{*}{スロット} & therapist\_name & Name of the therapist & [ ] \\ \cline{3-5} 
+    & & phone\_number & Contact number of the therapist & [ ] \\ \cline{3-5} 
+    & & address & Address of the therapist & [ ] \\ \cline{3-5} 
+    & & city & Area where user wants to search for a therapist & [ ] \\ \cline{3-5} 
+    & & appointment\_date & Date of the appointment & [ ] \\ \cline{3-5} 
+    & & appointment\_time & Time of the appointment & [ ] \\ \cline{3-5} 
+    & & type & Type of the therapist & [ 'Psychologist', 'Family Counselor', 'Psychiatrist' ] \\ \cline{2-5} 
+    & \multirow{2}{*}{インテント} & BookAppointment & Make a reservation with the therapist based on user's wish & [ 'therapist\_name', 'appointment\_time', 'appointment\_date' ] \\ \cline{3-5} 
+    & & FindProvider & Discover therapist according to user's conditions & [ 'city', 'type' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Travel\_1} & \multirow{6}{*}{スロット} & location & City or town where the attraction is located & [ ] \\ \cline{3-5} 
+    & & attraction\_name & Common name of the attraction & [ ] \\ \cline{3-5} 
+    & & category & Category to which the attraction belongs & [ 'Place of Worship', 'Theme Park', 'Museum', 'Historical Landmark', 'Park', 'Tourist Attraction', 'Sports Venue', 'Shopping Area', 'Performing Arts Venue', 'Nature Preserve' ] \\ \cline{3-5} 
+    & & phone\_number & Phone number to contact the attraction & [ ] \\ \cline{3-5} 
+    & & free\_entry & Boolean flag indicating whether entrance to attraction is free & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & good\_for\_kids & Boolean flag indicating whether attraction is good for to take kids to & [ 'True', 'False' ] \\ \cline{2-5} 
+    & & FindAttractions & Browse attractions in a given city & [ 'location' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Travel\_1} & \multirow{6}{*}{スロット} & location & City or town where the attraction is located & [ ] \\ \cline{3-5} 
+    & & attraction\_name & Common name of the attraction & [ ] \\ \cline{3-5} 
+    & & category & Category to which the attraction belongs & [ 'Place of Worship', 'Theme Park', 'Museum', 'Historical Landmark', 'Park', 'Tourist Attraction', 'Sports Venue', 'Shopping Area', 'Performing Arts Venue', 'Nature Preserve' ] \\ \cline{3-5} 
+    & & phone\_number & Phone number to contact the attraction & [ ] \\ \cline{3-5} 
+    & & free\_entry & Boolean flag indicating whether entrance to attraction is free & [ 'True', 'False' ] \\ \cline{3-5} 
+    & & good\_for\_kids & Boolean flag indicating whether attraction is good for to take kids to & [ 'True', 'False' ] \\ \cline{2-5} 
+    & & FindAttractions & Browse attractions in a given city & [ 'location' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Weather\_1} & \multirow{6}{*}{スロット} & precipitation & The possibility of rain or snow in percentage & [ ] \\ \cline{3-5} 
+    & & humidity & Percentage humidity & [ ] \\ \cline{3-5} 
+    & & wind & Wind speed in miles per hour & [ ] \\ \cline{3-5} 
+    & & temperature & Temperature in Fahrenheit & [ ] \\ \cline{3-5} 
+    & & city & Name of the city & [ ] \\ \cline{3-5} 
+    & & date & Date for the weather & [ ] \\ \cline{2-5} 
+    & & GetWeather & Get the weather of a certain location on a date & [ 'city' ] \\ \cline{1-5} 
+    \multirow{7}{*}{Weather\_1} & \multirow{6}{*}{スロット} & precipitation & The possibility of rain or snow in percentage & [ ] \\ \cline{3-5} 
+    & & humidity & Percentage humidity & [ ] \\ \cline{3-5} 
+    & & wind & Wind speed in miles per hour & [ ] \\ \cline{3-5} 
+    & & temperature & Temperature in Fahrenheit & [ ] \\ \cline{3-5} 
+    & & city & Name of the city & [ ] \\ \cline{3-5} 
+    & & date & Date for the weather & [ ] \\ \cline{2-5} 
+    & & GetWeather & Get the weather of a certain location on a date & [ 'city' ] \\
+\end{tabularx}

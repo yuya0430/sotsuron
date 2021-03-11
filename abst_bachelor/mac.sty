@@ -1,0 +1,75 @@
+% 数式ベクトル
+\newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
+
+% 下に字をずらす.
+\newcommand\lw[2]{\smash{\lower #1ex \hbox{#2}}}
+
+%  丸付き数字
+\def\MARU#1{{\rm\ooalign{\hfil\lower.168ex\hbox{#1}\hfil
+    \crcr\mathhexbox20D}}}
+
+%\newcommand\cn[1]{{\ooalign{
+%    \hfill$\scriptstyle#1$\hfill\crcr$\bigcirc$}}}
+
+% 表の中の複数列を一つにまとめる.
+\def\mul#1#2#3{\multicolumn{#1}{#2}{#3}}
+
+% 縦, 横方向の空間を付ける.
+\def\v#1{\par\vspace*{#1}}
+\def\h#1{\hspace*{#1}}
+
+% 文字の大きさの指定. 
+\def\ti#1{{\tiny #1}}
+\def\ti#1{{\tiny #1}}
+\def\sm#1{{\small #1}}
+\def\no#1{{\normalsize #1}}
+\def\la#1{{\large #1}}
+\def\La#1{{\Large #1}}
+\def\LA#1{{\LARGE #1}}
+\def\hu#1{{\huge #1}}
+\def\Hu#1{{\Huge #1}}
+
+% 表横線の太さの指定
+%\def\yoko#1{\noalign{\hrule height #1}}
+
+% 表横線の太さの指定
+\def\bline#1{\noalign{\hrule height #1pt}}
+
+% 表左側縦線の太さの指定
+\def\lline#1{{\vrule width#1pt~}}
+
+% 表右側縦線の太さの指定
+\def\rline#1{{~\vrule width#1pt}}
+
+% 表真中縦線の太さの指定
+\def\mline#1{@{~\vrule width#1pt~}}
+
+% センタリング
+\def\c#1{\begin{center}#1\end{center}}
+
+% フラッシュレフト
+\def\l#1{\begin{flushleft}#1\end{flushleft}}
+
+% フラッシュライト
+\def\r#1{\begin{flushright}#1\end{flushright}}
+
+% アンダーライン
+\def\u#1{\underline{#1}}
+
+% 振り仮名
+%\newcommand{\ruby}[2]{$\stackrel{%
+%    \hbox{\tiny #2}}{\hbox{#1}}$}
+
+% 笑顔
+
+\def\smiley{{\Huge$\bigcirc$\hspace*{-5.72mm}
+    \raise.2ex\hbox{$\cdot\cdot$}\hspace*{-3.9mm}
+    \lower.2ex\hbox{\normalsize $\smile$}}}
+
+\def\frowney{{\Huge$\bigcirc$\hspace*{-5.72mm}
+    \raise.2ex\hbox{$\cdot\cdot$}\hspace*{-3.9mm}
+    \lower.2ex\hbox{\normalsize $\frown$}}}
+
+\def\cry{{\Huge$\bigcirc$\hspace*{-5.72mm}
+    \raise.5ex\hbox{\tiny $><$}\hspace*{-3.9mm}
+    \lower.2ex\hbox{\normalsize $\frown$}}}

@@ -1,0 +1,95 @@
+% 表紙
+\thisfancypage{}{}
+\thispagestyle{empty}
+
+\vspace*{2cm}
+\begin{center}
+{\Large 平成 24 年度 \quad 修士論文}
+
+\vspace{2.5cm}
+% \bfseries の後に論文タイトル
+%{\Huge \bfseries アルゴリズムを自由に組み替え可能な音声認識デコーダの開発と評価}
+
+%{\Huge \bfseries 仮説生成/選択による大語彙連続音声認識アルゴリズムの統一的表現とそれに基づく汎用デコーダの開発}
+{\fontsize{22.5pt}{5pt} \bfseries \mbox{仮説生成／選択による}\\} \vspace{0.3cm}
+{\fontsize{22.5pt}{5pt} \bfseries \mbox{大語彙連続音声認識アルゴリズムの統一的表現と}\\} \vspace{0.3cm}
+{\fontsize{22.5pt}{5pt} \bfseries \mbox{それに基づく汎用デコーダの開発}\\}
+\end{center}
+
+\vspace{3.0cm}
+\Large
+\begin{center}
+  \hspace{-4.5cm}{\Large 指導教員}\\
+\vspace{0.3cm}
+\begin{tabular}{ll}
+  {\LARGE 徳田~恵一}&{\Large~~教授}\\
+  {\LARGE 李~晃伸}&{\Large~~准教授}\\
+  {\LARGE 南角~吉彦}&{\Large~~准教授}\\
+\end{tabular}
+\end{center}
+
+\vspace{2.0cm}
+\begin{center}
+名古屋工業大学大学院 工学研究科\\
+創成シミュレーション工学専攻 計算システム工学分野 \\
+{\large 平成 23 年度入学 ~~~~学籍番号} ~ 23413548 \\
+\vspace{1cm}
+{\LARGE 土屋 \ 貴裕 }\\
+\end{center}
+
+% 以下の○○には修論全体で付けられる通し番号を記入する
+
+\normalsize
+\newpage
+
+\thisfancypage{}{}
+\thispagestyle{empty}
+
+\thisfancypage{}{}
+\thispagestyle{empty}
+
+\vspace*{1cm}
+\begin{center}
+\rule{\textwidth}{.9pt}
+\vspace*{2mm}
+
+\uppercase{\large \bfseries Master Dissertation}
+
+\vspace*{1.5cm}
+
+% タイトル
+\uppercase{\Large \bfseries Development of a versatile decoder based on unified description of speech recognition algorithms using hypothesis generator/selector}
+
+\vspace*{2cm}
+
+\uppercase{\large \bfseries Master of Engineering}
+
+\vspace*{1.5cm}
+
+\uppercase{\large FEBRUARY~~2013}
+
+\vspace*{4mm}
+
+% 氏名．おそらく何をいれても大文字になる
+\uppercase{\large \bfseries Takahiro~Tsuchiya}
+
+\vspace*{2.5cm}
+
+% 先生方の名前
+{\large
+\begin{tabular}{rl}
+  Supervisors\,:&
+  Professor Keiichi Tokuda\\
+  &Associate Professor Akinobu Lee\\
+  &Associate Professor Yoshihiko Nankaku
+\end{tabular}
+}
+
+\vspace*{1.5cm}
+
+{\large Department of Scientific and Engineering Simulation\\
+  Nagoya Institute of Technology}
+    
+\vspace*{2mm}
+\rule{\textwidth}{.9pt}
+\end{center}

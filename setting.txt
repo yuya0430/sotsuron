@@ -1,0 +1,40 @@
+"latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "%DOC%"
+      ]
+    },
+    {
+      "name": "ptex2pdf",//ptex2pdf自体の設定はこれまでと一緒
+      "command": "ptex2pdf",
+      "args": [
+          "-l",
+          "-ot",
+          "-kanji=utf8 -synctex=1",
+          "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+          "%DOCFILE%"
+      ]
+    }
+  ],
+
+  // latex-workshop.latex.recipes: Recipe の定義
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "ptex2pdf",
+      "tools": [
+          "ptex2pdf",//タイプセットに使うtoolの名前
+      ]
+    }
+  ],

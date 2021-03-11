@@ -1,0 +1,130 @@
+\begin{thebibliography}{10}
+
+\bibitem{nbt}
+Nikola Mrk{\v{s}}i{\'c}, Diarmuid {\'O}~S{\'e}aghdha, Tsung-Hsien Wen, Blaise
+  Thomson, and Steve Young.
+\newblock Neural belief tracker: Data-driven dialogue state tracking.
+\newblock In {\em Proceedings of the 55th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 1777--1788, 2017.
+
+\bibitem{e2e}
+Bing Liu and Ian Lane.
+\newblock An end-to-end trainable neural network model with belief tracking for
+  task-oriented dialog.
+\newblock In {\em Proceedings of Interspeech 2017}, pages 2506--2510, 2017.
+
+\bibitem{dstc8}
+Seokhwan Kim, Michel Galley, Chulaka Gunasekara, Sungjin Lee, Adam Atkinson,
+  Baolin Peng, Hannes Schulz, Jianfeng Gao, Jinchao Li, Mahmoud Adada, Minlie
+  Huang, Luis Lastras, Jonathan~K. Kummerfeld, Walter~S. Lasecki, Chiori Hori,
+  Anoop Cherian, Tim~K. Marks, Abhinav Rastogi, Xiaoxue Zang, Srinivas Sunkara,
+  and Raghav Gupta.
+\newblock The eighth dialog system technology challenge.
+\newblock In {\em Third NeurIPS workshop on Conversational AI: “Today's
+  Practice and Tomorrow's Potential”}, 2019.
+
+\bibitem{letsgo}
+Antoine Raux, Brian Langner, Dan Bohus, Alan~W Black, and Maxine Eskenazi.
+\newblock Let's go public! taking a spoken dialog system to the real world.
+\newblock In {\em Proceedings of INTERSPEECH 2005}, pages 885--888, 2005.
+
+\bibitem{mmdagent}
+大浦 圭一郎, 山本 大介, 内匠 逸, 李~晃伸, and 徳田 恵一.
+\newblock
+  キャンパスの公共空間におけるユーザ参加型双方向音声案内デジタルサイネージシステム(\verb|<|特集\verb|>|音声対話システムの実用化に向けて).
+\newblock {\em 人工知能学会誌}, 28(1):60--67, 2013.
+
+\bibitem{rule_base}
+Kai Sun, Qizhe Xie, and Kai Yu.
+\newblock Recurrent polynomial network for dialogue state tracking.
+\newblock {\em arXiv preprint arXiv:1507.03934}, 2015.
+
+\bibitem{pomdp}
+Steve Young.
+\newblock Using pomdps for dialog management.
+\newblock In {\em 2006 IEEE Spoken Language Technology Workshop}, pages 8--13,
+  2006.
+
+\bibitem{pomdp_review}
+Steve Young, Milica Gasic, Blaise Thomson, and Jason Williams.
+\newblock Pomdp-based statistical spoken dialog systems: A review.
+\newblock {\em Proceedings of the IEEE}, 101:1160--1179, 2013.
+
+\bibitem{deeplearning}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem{dstc2}
+Matthew Henderson, Blaise Thomson, and Jason~D. Williams.
+\newblock The second dialog state tracking challenge.
+\newblock In {\em Proceedings of the 15th Annual Meeting of the Special
+  Interest Group on Discourse and Dialogue ({SIGDIAL})}, pages 263--272, 2014.
+
+\bibitem{multi-woz}
+Pawe{\l} Budzianowski, Tsung-Hsien Wen, Bo-Hsiang Tseng, I{\~n}igo Casanueva,
+  Stefan Ultes, Osman Ramadan, and Milica Ga{\v{s}}i{\'c}.
+\newblock Multiwoz - a large-scale multi-domain wizard-of-oz dataset for
+  task-oriented dialogue modelling.
+\newblock In {\em Proceedings of the 2018 Conference on Empirical Methods in
+  Natural Language Processing}, pages 5016--5026, 2018.
+
+\bibitem{joint}
+Abhinav Rastogi, Raghav Gupta, and Dilek Hakkani-Tur.
+\newblock Multi-task learning for joint language understanding and dialogue
+  state tracking.
+\newblock In {\em Proceedings of the 19th Annual {SIG}dial Meeting on Discourse
+  and Dialogue}, pages 376--384, 2018.
+
+\bibitem{trade}
+Chien-Sheng Wu, Andrea Madotto, Ehsan Hosseini-Asl, Caiming Xiong, Richard
+  Socher, and Pascale Fung.
+\newblock Transferable multi-domain state generator for task-oriented dialogue
+  systems.
+\newblock In {\em Proceedings of the 57th Annual Meeting of the Association for
+  Computational Linguistics}, pages 808--819, 2019.
+
+\bibitem{mrc}
+Shuyang Gao, Abhishek Sethi, Sanchit Agarwal, Tagyoung Chung, and Dilek
+  Hakkani-Tur.
+\newblock Dialog state tracking: A neural reading comprehension approach.
+\newblock In {\em Proceedings of the 20th Annual SIGdial Meeting on Discourse
+  and Dialogue}, pages 264--273, 2019.
+
+\bibitem{baseline}
+“dstc8-track4 のベースラインモデル”.
+\newblock
+  \url{https://github.com/google-research/google-research/tree/master/schema_guided_dst}.
+
+\bibitem{bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In {\em Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long and Short Papers)}, pages 4171--4186, 2019.
+
+\bibitem{transformer}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, \L~ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems 30}, pages
+  5998--6008. 2017.
+
+\bibitem{sgd}
+Abhinav Rastogi, Xiaoxue Zang, Srinivas Sunkara, Raghav Gupta, and Pranav
+  Khaitan.
+\newblock Towards scalable multi-domain conversational agents: The
+  schema-guided dialogue dataset, 2019.
+
+\bibitem{abci}
+“abci”.
+\newblock \url{https://abci.ai/ja/}.
+
+\bibitem{adam}
+Diederik Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em International Conference on Learning Representations}, 2014.
+
+\end{thebibliography}
